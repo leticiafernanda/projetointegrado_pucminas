@@ -17,5 +17,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
      - [x] Protótipo navegável do sistema
  
      - [x] Diagrama de classes de domínio
+     
+     - [x] Histórico da apropriação de horas
  
  
