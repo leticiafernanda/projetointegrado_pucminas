@@ -22,7 +22,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
      - [x] Histórico da apropriação de horas
      
     
-   - [ ] Etapa 2
+  - [ ] Etapa 2
  
      - [ ] Padrão Arquitetural
  
