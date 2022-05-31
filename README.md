@@ -36,7 +36,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
      
      - [ ] Video
 
-     - [ ] Apropriação de horas
+     - [ ] Histórico da apropriação de horas
 
 
  
