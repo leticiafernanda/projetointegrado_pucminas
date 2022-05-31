@@ -12,7 +12,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
  
      - [x] Diagrama de casos de uso
  
-     - [x] Requisitos não-funcionais
+     - [x] Requisitos funcionais e não-funcionais
  
      - [x] Protótipo navegável do sistema
  
