@@ -1,6 +1,7 @@
 # Projeto Integrado da Pós Graduação Engenharia de Software PUC Minas
 
-Projeto de conclusão de curso Pós Graduação Engenharia de Software .
+Projeto de conclusão de curso Pós Graduação Engenharia de Software.
+
 Ano 2021 - 2022
 
 Diretório com informações e documentos adicionais da matéria de Projeto Integrado da Pós-Graduação Puc Minas 
