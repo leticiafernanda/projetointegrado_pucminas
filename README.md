@@ -20,6 +20,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
      - [x] Diagrama de classes de domínio
      
      - [x] Histórico da apropriação de horas
+     
     
    - [ ] Etapa 2
  
