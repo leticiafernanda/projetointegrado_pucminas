@@ -20,5 +20,24 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
      - [x] Diagrama de classes de domínio
      
      - [x] Histórico da apropriação de horas
+     
+    
+  - [ ] Etapa 2
+ 
+     - [ ] Padrão Arquitetural
+ 
+     - [ ] Arquitetura da solução
+ 
+     - [ ] Frameworks e tecnologias usadas
+ 
+     - [ ] Estrutura base do front end
+ 
+     - [ ] Desenvolvimento de uma funcionalidade
+     
+     - [ ] Video
+
+     - [ ] Histórico da apropriação de horas
+
+
  
  
