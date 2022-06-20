@@ -1,17 +1,26 @@
 package com.aplication.petcenter.domain.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 @Table(name = "FichaAnimal")
 public class FichaAnimal implements Serializable {
 
     private static final long serialVersionUID = 5118809257133340942L;
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id_ficha_animal")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
@@ -30,7 +39,7 @@ public class FichaAnimal implements Serializable {
     @Column(name = "exames", nullable = false)
     private String exames;
 
-    @Column(name = "solicitaExames")
+    @Column(name = "solicita_exames")
     private String solicitaExames;
 
     @Column(name = "procedimento")

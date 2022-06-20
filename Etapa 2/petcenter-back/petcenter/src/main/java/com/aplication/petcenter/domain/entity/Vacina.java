@@ -1,18 +1,29 @@
 package com.aplication.petcenter.domain.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 @Table(name = "Vacina")
 public class Vacina implements Serializable {
 
     private static final long serialVersionUID = 1816527773309623218L;
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id_vacina")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(name = "nome", nullable = false)
@@ -27,16 +38,29 @@ public class Vacina implements Serializable {
     @Column(name = "lote")
     private String lote;
 
+    @ManyToMany
+    @JoinTable(name = "vacina_servicos",
+            joinColumns = @JoinColumn(name = "vacina_id_vacina", referencedColumnName = "servicos_id_servico"))
+    private List<Servicos> servicoses = new ArrayList<>();
 
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "vacina_servicos",
+            joinColumns = @JoinColumn(name = "vacina_id_vacina", referencedColumnName = "servicos_id_servico"))
+    private List<Servicos> servico = new ArrayList<>();
 
-    public Vacina() {
+    public List<Servicos> getServico() {
+        return servico;
     }
-    public Vacina(Integer id, String nome, Date validade, Date fabricacao, String lote) {
-        super();
-        this.id = id;
-        this.nome = nome;
-        this.validade = validade;
-        this.fabricacao = fabricacao;
-        this.lote = lote;
+
+    public void setServico(List<Servicos> servico) {
+        this.servico = servico;
+    }
+
+    public List<Servicos> getServicoses() {
+        return servicoses;
+    }
+
+    public void setServicoses(List<Servicos> servicoses) {
+        this.servicoses = servicoses;
     }
 }

@@ -1,5 +1,10 @@
 package com.aplication.petcenter.domain.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
@@ -7,13 +12,17 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 @Table(name = "Consulta")
 public class Consulta implements Serializable {
 
     private static final long serialVersionUID = 5118809257133340942L;
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id_consulta")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 

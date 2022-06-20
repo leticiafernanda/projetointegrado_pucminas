@@ -1,18 +1,27 @@
 package com.aplication.petcenter.domain.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 @Table(name = "Agendamento")
 public class Agendamento implements Serializable {
 
     private static final long serialVersionUID = 5118809257133340942L;
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id_agendamento")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
