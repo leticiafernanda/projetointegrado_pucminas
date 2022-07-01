@@ -46,4 +46,8 @@ public class Consulta implements Serializable {
     @JoinColumn(name = "cliente", nullable = false)
     private Cliente cliente;
 
+    @OneToOne
+    @JoinColumn(name = "animal", nullable = false)
+    private Animal animal;
+
 }

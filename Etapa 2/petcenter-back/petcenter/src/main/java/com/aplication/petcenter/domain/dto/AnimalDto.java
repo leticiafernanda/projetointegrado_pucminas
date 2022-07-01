@@ -14,4 +14,5 @@ public class AnimalDto implements Serializable {
     private final ClienteDto proprietario;
     private final String peso;
     private final Integer idade;
+    private final String genero;
 }

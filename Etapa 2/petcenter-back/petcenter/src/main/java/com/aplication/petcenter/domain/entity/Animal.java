@@ -46,4 +46,7 @@ public class Animal implements Serializable {
     @Column(name = "idade")
     private Integer idade;
 
+    @Column(name = "genero", nullable = false)
+    private String genero;
+
 }

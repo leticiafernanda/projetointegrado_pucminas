@@ -16,4 +16,5 @@ public class ConsultaDto implements Serializable {
     private final String pedido;
     private final Double custo;
     private final ClienteDto cliente;
+    private final AnimalDto animal;
 }
