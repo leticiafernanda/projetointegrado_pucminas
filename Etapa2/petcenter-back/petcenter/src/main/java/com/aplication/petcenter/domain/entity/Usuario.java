@@ -2,19 +2,16 @@ package com.aplication.petcenter.domain.entity;
 
 
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
-import com.aplication.petcenter.domain.entity.TipoPermissão;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Data
 @Table(name = "Usuario")
 public abstract class Usuario implements Serializable {
@@ -35,6 +32,6 @@ public abstract class Usuario implements Serializable {
     @OneToMany
     @JoinColumn(name = "permissao", nullable = false)
     @Enumerated(EnumType.ORDINAL)
-    private TipoPermissão tipo;
+    private com.aplication.petcenter.domain.entity.TipoPermissão tipo;
 
 }

@@ -15,7 +15,7 @@ import java.util.Date;
 @Builder
 @Data
 @Table(name = "Funcionario")
-public abstract class Funcionario implements Serializable {
+public class Funcionario implements Serializable {
 
     private static final long serialVersionUID = 5118809257133340942L;
 

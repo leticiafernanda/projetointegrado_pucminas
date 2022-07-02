@@ -1,7 +1,6 @@
 package com.aplication.petcenter.domain.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +10,7 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+
 @Data
 @Table(name = "Rh")
 public class Rh extends Funcionario implements Serializable {
