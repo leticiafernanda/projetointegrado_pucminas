@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface AnimalService {
     List<AnimalDTO> findAnimalList();
+
+    AnimalDTO findById(Integer clienteId);
 }
