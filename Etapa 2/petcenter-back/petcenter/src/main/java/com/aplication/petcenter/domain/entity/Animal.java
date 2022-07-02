@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -36,8 +35,9 @@ public class Animal implements Serializable {
     @Column(name = "pelagem")
     private String pelagem;
 
-    @ManyToOne
-    @JoinColumn(name = "proprietario", nullable = false)
+
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "proprietario")
     private Cliente proprietario;
 
     @Column(name = "peso")
