@@ -27,8 +27,8 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public AnimalDTO findById(Integer clienteId) {
-        var animal = animalRepository.findById(clienteId).orElse(null);
+    public AnimalDTO findById(Integer animalId) {
+        var animal = animalRepository.findById(animalId).orElse(null);
 
         return mapperAnimalDTO.execute(animal);
     }

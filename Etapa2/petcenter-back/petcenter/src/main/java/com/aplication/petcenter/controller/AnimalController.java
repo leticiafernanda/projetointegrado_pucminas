@@ -24,9 +24,9 @@ public class AnimalController {
         List<AnimalDTO> retorno = animalService.findAnimalList();
         return ResponseEntity.ok(retorno);
     }
-    @GetMapping("/{id_cliente}")
-    public ResponseEntity<AnimalDTO> findOne(@PathVariable(value = "id_cliente") Integer clienteId) {
-        return ResponseEntity.ok(animalService.findById(clienteId));
+    @GetMapping("/{id_animal}")
+    public ResponseEntity<AnimalDTO> findOne(@PathVariable(value = "id_animal") Integer animalId) {
+        return ResponseEntity.ok(animalService.findById(animalId));
     }
 
 }

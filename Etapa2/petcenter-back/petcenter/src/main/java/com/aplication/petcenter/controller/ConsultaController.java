@@ -1,11 +1,15 @@
 package com.aplication.petcenter.controller;
 
-import com.aplication.petcenter.service.AgendamentoService;
+import com.aplication.petcenter.domain.dto.ConsultaDTO;
 import com.aplication.petcenter.service.ConsultaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/consulta")
@@ -13,5 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public class ConsultaController {
     private final ConsultaService consultaService;
+
+    @GetMapping
+    public ResponseEntity<List<ConsultaDTO>> findConsultaList() {
+        List<ConsultaDTO> retorno = consultaService.findConsultaList();
+        return ResponseEntity.ok(retorno);
+    }
 
 }
