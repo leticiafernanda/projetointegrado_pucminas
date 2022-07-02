@@ -23,4 +23,9 @@ public class ClienteServiceImpl implements ClienteService {
         List<Cliente> cliente = clienteRepository.findAll();
         return cliente.stream().map(mapperClienteDTO::execute).collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteById(Integer clienteId) {
+        clienteRepository.deleteById(clienteId);
+    }
 }

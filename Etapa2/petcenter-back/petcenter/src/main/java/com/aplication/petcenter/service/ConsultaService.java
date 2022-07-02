@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ConsultaService {
     List<ConsultaDTO> findConsultaList();
+
+    void deleteById(Integer consultaId);
 }

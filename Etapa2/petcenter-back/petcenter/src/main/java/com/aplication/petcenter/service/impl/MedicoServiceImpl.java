@@ -23,4 +23,9 @@ public class MedicoServiceImpl implements MedicoService {
         List<Medico> medicos = medicoRepository.findAll();
         return medicos.stream().map(mapperMedicoDTO::execute).collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteById(Integer medicoId) {
+        medicoRepository.deleteById(medicoId);
+    }
 }

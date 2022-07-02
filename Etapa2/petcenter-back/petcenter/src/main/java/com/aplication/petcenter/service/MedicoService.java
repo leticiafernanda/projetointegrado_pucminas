@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface MedicoService {
     List<MedicoDTO> findMedicoList();
+
+    void deleteById(Integer medicoId);
 }

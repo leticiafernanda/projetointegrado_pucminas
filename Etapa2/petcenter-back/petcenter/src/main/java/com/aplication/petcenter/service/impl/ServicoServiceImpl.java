@@ -23,4 +23,9 @@ public class ServicoServiceImpl implements ServicosService {
         List<Servicos> servicos = servicoRepository.findAll();
         return servicos.stream().map(mapperServicosDTO::execute).collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteById(Integer servicoId) {
+        servicoRepository.deleteById(servicoId);;
+    }
 }

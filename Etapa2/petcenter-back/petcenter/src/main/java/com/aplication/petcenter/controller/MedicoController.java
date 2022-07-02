@@ -5,9 +5,7 @@ import com.aplication.petcenter.service.MedicoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class MedicoController {
     public ResponseEntity<List<MedicoDTO>> findMedicoList() {
         List<MedicoDTO> retorno = medicoService.findMedicoList();
         return ResponseEntity.ok(retorno);
+    }
+    @DeleteMapping("/{id_medico}")
+    public ResponseEntity<Void> deleteMedico(@PathVariable(value = "id_medico") Integer medicoId) {
+        medicoService.deleteById(medicoId);
+        return ResponseEntity.noContent().build();
     }
 }

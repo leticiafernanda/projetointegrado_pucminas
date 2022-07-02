@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface AdministradorService {
     List<AdministradorDTO> findClienteList();
+
+    void deleteById(Integer admId);
 }

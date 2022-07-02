@@ -23,4 +23,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         List<Usuario> usuarios = usuarioRepository.findAll();
         return usuarios.stream().map(mapperUsuarioDTO::execute).collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteById(Integer usuarioId) {
+        usuarioRepository.deleteById(usuarioId);;
+    }
 }

@@ -23,4 +23,5 @@ public class FichaAnimalController {
         List<FichaAnimalDTO> retorno = fichaAnimalService.findFichaAnimalList();
         return ResponseEntity.ok(retorno);
     }
+
 }

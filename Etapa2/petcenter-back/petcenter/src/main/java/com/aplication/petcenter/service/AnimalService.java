@@ -8,4 +8,6 @@ public interface AnimalService {
     List<AnimalDTO> findAnimalList();
 
     AnimalDTO findById(Integer animalId);
+
+    void deleteById(Integer animalId);
 }

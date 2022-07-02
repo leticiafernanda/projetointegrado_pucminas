@@ -23,4 +23,9 @@ public class ConsultaServiceImpl implements ConsultaService {
         List<Consulta> consultas = consultaRepository.findAll();
         return consultas.stream().map(mapperConsultaDTO::execute).collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteById(Integer consultaId) {
+        consultaRepository.deleteById(consultaId);
+    }
 }

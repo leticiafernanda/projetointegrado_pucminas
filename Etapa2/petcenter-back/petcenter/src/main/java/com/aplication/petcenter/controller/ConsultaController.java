@@ -5,9 +5,7 @@ import com.aplication.petcenter.service.ConsultaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +20,11 @@ public class ConsultaController {
     public ResponseEntity<List<ConsultaDTO>> findConsultaList() {
         List<ConsultaDTO> retorno = consultaService.findConsultaList();
         return ResponseEntity.ok(retorno);
+    }
+    @DeleteMapping("/{id_consulta}")
+    public ResponseEntity<Void> deleteConsulta(@PathVariable(value = "id_consulta") Integer consultaId) {
+        consultaService.deleteById(consultaId);
+        return ResponseEntity.noContent().build();
     }
 
 }

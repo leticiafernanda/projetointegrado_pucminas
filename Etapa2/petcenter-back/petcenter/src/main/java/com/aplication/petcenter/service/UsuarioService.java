@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface UsuarioService {
     List<UsuarioDTO> findUsuarioList();
+
+    void deleteById(Integer usuarioId);
 }

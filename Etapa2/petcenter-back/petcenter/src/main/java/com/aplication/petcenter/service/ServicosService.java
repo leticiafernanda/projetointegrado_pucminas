@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ServicosService {
     List<ServicosDTO> findServicoList();
+
+    void deleteById(Integer servicoId);
 }

@@ -33,4 +33,9 @@ public class AnimalServiceImpl implements AnimalService {
         return mapperAnimalDTO.execute(animal);
     }
 
+    @Override
+    public void deleteById(Integer animalId) {
+         animalRepository.deleteById(animalId);;
+    }
+
 }

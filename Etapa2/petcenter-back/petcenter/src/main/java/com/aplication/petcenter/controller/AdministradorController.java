@@ -5,9 +5,7 @@ import com.aplication.petcenter.service.AdministradorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,10 @@ public class AdministradorController {
     public ResponseEntity<List<AdministradorDTO>> findAdministradorList() {
         List<AdministradorDTO> retorno = administradorService.findClienteList();
         return ResponseEntity.ok(retorno);
+    }
+    @DeleteMapping("/{id_administrador}")
+    public ResponseEntity<Void> deleteAdministrados(@PathVariable(value = "id_administrador") Integer admId) {
+        administradorService.deleteById(admId);
+        return ResponseEntity.noContent().build();
     }
 }

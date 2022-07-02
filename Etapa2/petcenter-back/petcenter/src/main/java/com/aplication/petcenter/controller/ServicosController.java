@@ -5,9 +5,7 @@ import com.aplication.petcenter.service.ServicosService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class ServicosController {
     public ResponseEntity<List<ServicosDTO>> findServicoList() {
         List<ServicosDTO> retorno = servicoService.findServicoList();
         return ResponseEntity.ok(retorno);
+    }
+    @DeleteMapping("/{id_servico}")
+    public ResponseEntity<Void> deleteServico(@PathVariable(value = "id_servico") Integer servicoId) {
+        servicoService.deleteById(servicoId);
+        return ResponseEntity.noContent().build();
     }
 }
