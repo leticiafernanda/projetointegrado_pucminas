@@ -1,8 +1,10 @@
 package com.aplication.petcenter.controller;
 
 import com.aplication.petcenter.domain.dto.AnimalDTO;
+import com.aplication.petcenter.domain.entity.Animal;
 import com.aplication.petcenter.service.AnimalService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +32,9 @@ public class AnimalController {
         animalService.deleteById(animalId);
         return ResponseEntity.noContent().build();
     }
-
+    @PostMapping
+    public ResponseEntity<Void> createAnimal(@RequestBody Animal animal) {
+        animalService.save(animal);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 }

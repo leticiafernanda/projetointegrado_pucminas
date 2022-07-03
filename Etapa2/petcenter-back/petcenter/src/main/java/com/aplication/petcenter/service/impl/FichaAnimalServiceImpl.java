@@ -23,4 +23,9 @@ public class FichaAnimalServiceImpl implements FichaAnimalService {
         List<FichaAnimal> fichaAnimal = fichaAnimalRepository.findAll();
         return fichaAnimal.stream().map(mapperFichaAnimalDTO::execute).collect(Collectors.toList());
     }
+
+    @Override
+    public void save(FichaAnimal fichaAnimal) {
+        fichaAnimalRepository.save(fichaAnimal);
+    }
 }

@@ -9,11 +9,13 @@ import com.aplication.petcenter.service.AnimalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class AnimalServiceImpl implements AnimalService {
 
     private final ClienteRepository clienteRepository;
@@ -37,5 +39,11 @@ public class AnimalServiceImpl implements AnimalService {
     public void deleteById(Integer animalId) {
          animalRepository.deleteById(animalId);;
     }
+
+    @Transactional
+    public void save(Animal animal) {
+        animalRepository.save(animal);
+    }
+
 
 }

@@ -28,4 +28,9 @@ public class ServicoServiceImpl implements ServicosService {
     public void deleteById(Integer servicoId) {
         servicoRepository.deleteById(servicoId);;
     }
+
+    @Override
+    public void save(Servicos servicos) {
+        servicoRepository.save(servicos);
+    }
 }

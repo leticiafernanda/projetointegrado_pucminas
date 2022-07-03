@@ -28,4 +28,9 @@ public class MedicoServiceImpl implements MedicoService {
     public void deleteById(Integer medicoId) {
         medicoRepository.deleteById(medicoId);
     }
+
+    @Override
+    public void save(Medico medico) {
+        medicoRepository.save(medico);
+    }
 }

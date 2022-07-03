@@ -28,4 +28,9 @@ public class ConsultaServiceImpl implements ConsultaService {
     public void deleteById(Integer consultaId) {
         consultaRepository.deleteById(consultaId);
     }
+
+    @Override
+    public void save(Consulta consulta) {
+        consultaRepository.save(consulta);
+    }
 }
