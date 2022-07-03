@@ -23,4 +23,5 @@ public class ConsultaDTO implements Serializable {
     private  Double custo;
     private ClienteDTO cliente;
     private AnimalDTO animal;
+    private String statusConsulta;
 }

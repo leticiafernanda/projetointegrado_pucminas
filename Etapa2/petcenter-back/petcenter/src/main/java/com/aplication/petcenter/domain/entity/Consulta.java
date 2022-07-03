@@ -50,4 +50,8 @@ public class Consulta implements Serializable {
     @JoinColumn(name = "animal", nullable = false)
     private Animal animal;
 
+    @Column(name = "status", nullable = false)
+    private String statusConsulta;
+
+
 }
