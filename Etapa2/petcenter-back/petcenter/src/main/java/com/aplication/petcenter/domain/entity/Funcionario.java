@@ -14,8 +14,9 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @Data
+@Inheritance(strategy=InheritanceType.JOINED)
 @Table(name = "Funcionario")
-public abstract class Funcionario implements Serializable {
+public class Funcionario implements Serializable {
 
     private static final long serialVersionUID = 5118809257133340942L;
 

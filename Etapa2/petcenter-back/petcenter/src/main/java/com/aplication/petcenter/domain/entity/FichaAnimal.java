@@ -25,15 +25,15 @@ public class FichaAnimal implements Serializable {
     private Integer id;
 
     @OneToOne
-    @JoinColumn(name = "proprietario", nullable = false)
+    @JoinColumn(name="id_cliente", nullable = false)
     private Cliente proprietario;
 
     @OneToOne
-    @JoinColumn(name = "proprietario", nullable = false)
+    @JoinColumn(name="id_animal", nullable = false)
     private Animal animal;
 
     @OneToOne
-    @JoinColumn(name = "medico", nullable = false)
+    @JoinColumn(name="id_medico", nullable = false)
     private Medico medico;
 
     @Column(name = "exames", nullable = false)

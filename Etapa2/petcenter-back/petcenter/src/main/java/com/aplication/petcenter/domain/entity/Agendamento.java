@@ -25,12 +25,12 @@ public class Agendamento implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "proprietario", nullable = false)
+    @OneToOne
+    @JoinColumn(name="id_cliente")
     private Cliente proprietario;
 
-    @ManyToOne
-    @JoinColumn(name = "medico", nullable = false)
+    @OneToOne
+    @JoinColumn(name="id_medico")
     private Medico medico;
 
     @Column(name = "data")
@@ -38,6 +38,7 @@ public class Agendamento implements Serializable {
 
     @Column(name = "hora")
     private Time hora;
+
     @Column(name = "telefoneCelular")
     private String telefoneCelular;
 

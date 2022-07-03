@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @Table(name = "Usuario")
-public abstract class Usuario implements Serializable {
+public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1816527773309623218L;
 
@@ -32,8 +32,7 @@ public abstract class Usuario implements Serializable {
     @Column(name = "senha", unique = true)
     private String senha;
 
-    @OneToMany
-    @JoinColumn(name = "permissao", nullable = false)
+    @Column(name = "permissao")
     @Enumerated(EnumType.ORDINAL)
     private TipoPermissão tipo;
 
