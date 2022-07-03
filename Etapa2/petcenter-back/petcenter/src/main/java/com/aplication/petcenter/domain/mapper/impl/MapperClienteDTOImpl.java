@@ -21,4 +21,15 @@ public class MapperClienteDTOImpl implements MapperClienteDTO {
                 .telefoneCelular(cliente.getTelefoneCelular())
                 .build();
     }
+
+    @Override
+    public Cliente execute(ClienteDTO clienteDTO, Cliente currentCliente) {
+        currentCliente.setNome(clienteDTO.getNome());
+        currentCliente.setDataNascimento(clienteDTO.getDataNascimento());
+        currentCliente.setEmail(clienteDTO.getEmail());
+        currentCliente.setEndereco(clienteDTO.getEndereco());
+        currentCliente.setTelefoneCasa(clienteDTO.getTelefoneCasa());
+        currentCliente.setTelefoneCasa(clienteDTO.getTelefoneCelular());
+        return currentCliente;
+    }
 }

@@ -33,4 +33,13 @@ public class ClienteServiceImpl implements ClienteService {
     public void save(Cliente cliente) {
         clienteRepository.save(cliente);
     }
+
+    @Override
+    public ClienteDTO updateById(Integer clienteId, ClienteDTO clienteDTO) {
+        var currentCliente = clienteRepository.findById(clienteId).orElse(null);
+        clienteDTO.setId(clienteId);
+        Cliente cliente = mapperClienteDTO.execute(clienteDTO, currentCliente);
+        clienteRepository.save(cliente);
+        return mapperClienteDTO.execute(cliente);
+    }
 }

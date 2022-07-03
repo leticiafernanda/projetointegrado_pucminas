@@ -1,7 +1,6 @@
 package com.aplication.petcenter.controller;
 
 import com.aplication.petcenter.domain.dto.ClienteDTO;
-import com.aplication.petcenter.domain.entity.Agendamento;
 import com.aplication.petcenter.domain.entity.Cliente;
 import com.aplication.petcenter.service.ClienteService;
 import lombok.RequiredArgsConstructor;
@@ -33,5 +32,10 @@ public class ClienteController {
     public ResponseEntity<Void> createCliente(@RequestBody Cliente cliente) {
         clienteService.save(cliente);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+    @PutMapping("/{id_cliente}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<ClienteDTO> updateCliente(@PathVariable Integer clienteId, @RequestBody ClienteDTO clienteDTO) {
+        return ResponseEntity.ok(clienteService.updateById(clienteId, clienteDTO));
     }
 }

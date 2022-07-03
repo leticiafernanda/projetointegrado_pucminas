@@ -29,4 +29,5 @@ public class AgendamentoController {
         agendamentoService.save(agendamento);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
 }

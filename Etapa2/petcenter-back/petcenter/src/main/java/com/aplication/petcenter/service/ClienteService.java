@@ -11,4 +11,6 @@ public interface ClienteService {
     void deleteById(Integer clienteId);
 
     void save(Cliente cliente);
+
+    ClienteDTO updateById(Integer clienteId, ClienteDTO clienteDTO);
 }
