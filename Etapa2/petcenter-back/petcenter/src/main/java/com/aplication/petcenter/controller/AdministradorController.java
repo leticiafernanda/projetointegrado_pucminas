@@ -12,5 +12,5 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public class AdministradorController {
 
-   // private final AdministradorService administradorService;
+    private final AdministradorService administradorService;
 }

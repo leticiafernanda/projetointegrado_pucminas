@@ -32,7 +32,8 @@ public class Consulta implements Serializable {
     @Column(name = "horario", nullable = false)
     private Time horario;
 
-    @OneToMany(targetEntity=Servicos.class,mappedBy = "descricao",fetch=FetchType.EAGER)
+    @OneToOne
+    @JoinColumn(name = "servico", nullable = false)
     private List<Servicos> servicos;
 
     @Column(name = "pedido", nullable = false)
@@ -42,12 +43,15 @@ public class Consulta implements Serializable {
     private Double custo;
 
     @OneToOne
-    @JoinColumn(name="id_cliente", nullable = false)
+    @JoinColumn(name = "cliente", nullable = false)
     private Cliente cliente;
 
     @OneToOne
-    @JoinColumn(name="id_animal", nullable = false)
+    @JoinColumn(name = "animal", nullable = false)
     private Animal animal;
+
+    @Column(name = "status", nullable = false)
+    private String statusConsulta;
 
 
 }
