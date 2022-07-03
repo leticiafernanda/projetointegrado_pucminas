@@ -34,4 +34,5 @@ public class AdministradorController {
         administradorService.save(adm);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
 }
