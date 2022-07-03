@@ -32,7 +32,7 @@ public class Servicos implements Serializable {
     @Column(name = "valor", nullable = false)
     private Double valor;
 
-    @OneToMany(targetEntity=Vacina.class,mappedBy = "nome",fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "nome",fetch=FetchType.EAGER)
     private List<Vacina> vacinas;
 
 }
