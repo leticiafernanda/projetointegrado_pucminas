@@ -13,4 +13,7 @@ public interface AnimalService {
     void deleteById(Integer animalId);
 
     void save(Animal animal);
+
+
+    AnimalDTO updateById(AnimalDTO animalDTO, Integer animalId);
 }

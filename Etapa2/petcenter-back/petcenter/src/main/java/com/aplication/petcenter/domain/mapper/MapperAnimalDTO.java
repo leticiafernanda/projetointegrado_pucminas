@@ -7,4 +7,5 @@ public interface MapperAnimalDTO {
 
     AnimalDTO execute(Animal animal);
 
+    Animal execute(AnimalDTO animalDTO, Animal currentAnimal);
 }
