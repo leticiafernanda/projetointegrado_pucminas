@@ -32,8 +32,8 @@ public class Consulta implements Serializable {
     @Column(name = "horario", nullable = false)
     private Time horario;
 
-    @OneToOne
-    @JoinColumn(name = "servico", nullable = false)
+    @ManyToMany
+    @JoinColumn(name = "descricao", nullable = false)
     private List<Servicos> servicos;
 
     @Column(name = "pedido", nullable = false)
@@ -49,5 +49,9 @@ public class Consulta implements Serializable {
     @OneToOne
     @JoinColumn(name = "animal", nullable = false)
     private Animal animal;
+
+    @Column(name = "status", nullable = false)
+    private String statusConsulta;
+
 
 }

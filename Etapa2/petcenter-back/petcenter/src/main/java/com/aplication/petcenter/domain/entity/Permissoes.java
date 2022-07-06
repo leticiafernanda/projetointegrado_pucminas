@@ -24,6 +24,7 @@ public class Permissoes implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column(name = "permissao")
     @Enumerated(EnumType.ORDINAL)
     private TipoPermissão tipo;
 }

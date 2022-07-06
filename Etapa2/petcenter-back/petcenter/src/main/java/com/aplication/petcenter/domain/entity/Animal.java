@@ -35,9 +35,8 @@ public class Animal implements Serializable {
     @Column(name = "pelagem")
     private String pelagem;
 
-
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    @JoinColumn(name = "proprietario")
+    @OneToOne
+    @JoinColumn(name="id_cliente")
     private Cliente proprietario;
 
     @Column(name = "peso")

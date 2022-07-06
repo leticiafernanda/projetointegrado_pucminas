@@ -14,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @Data
+@Inheritance(strategy=InheritanceType.JOINED)
 @Table(name = "Funcionario")
 public class Funcionario implements Serializable {
 

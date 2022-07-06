@@ -32,7 +32,7 @@ public class Servicos implements Serializable {
     @Column(name = "valor", nullable = false)
     private Double valor;
 
-    @ManyToMany(mappedBy = "Servicos", cascade = CascadeType.ALL)
-    private List<Vacina> vacinas = new ArrayList<>();
+    @OneToMany(mappedBy = "nome",fetch=FetchType.EAGER)
+    private List<Vacina> vacinas;
 
 }

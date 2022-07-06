@@ -38,29 +38,7 @@ public class Vacina implements Serializable {
     @Column(name = "lote")
     private String lote;
 
-    @ManyToMany
-    @JoinTable(name = "vacina_servicos",
-            joinColumns = @JoinColumn(name = "vacina_id_vacina", referencedColumnName = "servicos_id_servico"))
-    private List<Servicos> servicoses = new ArrayList<>();
+    @OneToMany(mappedBy = "descricao")
+    private List<Servicos> servico;
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "vacina_servicos",
-            joinColumns = @JoinColumn(name = "vacina_id_vacina", referencedColumnName = "servicos_id_servico"))
-    private List<Servicos> servico = new ArrayList<>();
-
-    public List<Servicos> getServico() {
-        return servico;
-    }
-
-    public void setServico(List<Servicos> servico) {
-        this.servico = servico;
-    }
-
-    public List<Servicos> getServicoses() {
-        return servicoses;
-    }
-
-    public void setServicoses(List<Servicos> servicoses) {
-        this.servicoses = servicoses;
-    }
 }
