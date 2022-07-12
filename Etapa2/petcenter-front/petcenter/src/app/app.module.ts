@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PagesModule } from './pages/pages.module';
     BrowserAnimationsModule,
     CoreModule,
     MaterialModule,
-    PagesModule
+    PagesModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
