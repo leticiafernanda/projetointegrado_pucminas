@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "login-page",
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  constructor( public router: Router) { }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
   isFieldInvalid(field: string) {}
   onSubmit() {}
- 
+  handleClick(){
+    this.router.navigate([`/home`])
+  }
 }

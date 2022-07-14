@@ -1,21 +1,22 @@
+<navbar></navbar>
 <div class="signin-content">
     <mat-card>
         <mat-card-content>
             <form (ngSubmit)="onSubmit()">
                 <img mat-card-image src="../../../assets/pet.png" alt="logo">
                 <mat-form-field class="full-width-input" appearance="outline">
-                    <input matInput placeholder="User" required>
+                    <input matInput placeholder="User">
                     <mat-error *ngIf="isFieldInvalid('userName')">
                         Please inform your user name
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="full-width-input" appearance="outline">
-                    <input matInput type="password" placeholder="Password" required>
+                    <input matInput type="password" placeholder="Password">
                     <mat-error *ngIf="isFieldInvalid('userName')">
                         Please inform your password
                     </mat-error>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit">Login</button>
+                <button mat-raised-button color="primary" type="submit" (click)="handleClick()">Login</button>
             </form>
         </mat-card-content>
     </mat-card>
