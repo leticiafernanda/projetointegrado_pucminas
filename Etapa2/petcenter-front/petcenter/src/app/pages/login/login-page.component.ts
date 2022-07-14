@@ -11,6 +11,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-
+  isFieldInvalid(field: string) {}
+  onSubmit() {}
  
 }

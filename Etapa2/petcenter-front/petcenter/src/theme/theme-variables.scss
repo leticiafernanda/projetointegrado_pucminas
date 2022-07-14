@@ -3,7 +3,9 @@
  */
 
 @use "@angular/material" as mat;
-$primary: ( 50: #fff, 100: #f4f4f5, 200: #f2f8ff, 300: #d1d5db, 400: #959dac, 500: #C6302C, 600: #bb133e, 700: #a8083b, 800: #697489, 900: #353b46, A100: #d7e4f6, A200: #5898ff, A400: #2579ff, A700: #0c69ff, A800: #b3b9c4, contrast: ( 50: #000, 100: #000, 200: #000, 300: #000, 400: #fff, 500: #fff, 600: #fff, 700: #fff, 800: #fff, 900: #fff, A100: #000, A200: #000, A400: #fff, A700: #fff, ), );
+// Angular Material custom theme
+// See https://material.angular.io/guide/theming for more details.
+$primary: ( 50: #fff, 100: #f4f4f5, 200: #f2f8ff, 300: #d1d5db, 400: #959dac, 500: #f3ac56, 600: #bb133e, 700: #a8083b, 800: #697489, 900: #353b46, A100: #d7e4f6, A200: #5898ff, A400: #2579ff, A700: #0c69ff, A800: #b3b9c4, contrast: ( 50: #000, 100: #000, 200: #000, 300: #000, 400: #fff, 500: #fff, 600: #fff, 700: #fff, 800: #fff, 900: #fff, A100: #000, A200: #000, A400: #fff, A700: #fff, ), );
 $custom-colors: ( successful: #2d8709, );
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
