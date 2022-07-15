@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: "login-page",
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor( public router: Router) { }
+  constructor( public router: Router,  private route: ActivatedRoute,) { }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }

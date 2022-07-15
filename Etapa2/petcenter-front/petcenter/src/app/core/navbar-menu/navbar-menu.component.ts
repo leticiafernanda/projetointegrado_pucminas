@@ -16,7 +16,7 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
   menu: NavItem [] = [
     {
       displayName: 'Inicio',
-      route: '',
+      route: '/home',
     },        
     {
       displayName: 'Animal',
@@ -92,7 +92,7 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
           route: '',
         },  
         {
-          displayName: 'Locais de Atendimento de Urgeêcia',
+          displayName: 'Locais de Atendimento de Urgência',
           route: '',
         },  
         {
