@@ -43,9 +43,9 @@ const PACIENTE: string[] = [
 ];
 
 @Component({
-  selector: 'app-consulta',
-  templateUrl: './consulta.component.html',
-  styleUrls: ['./consulta.component.scss']
+  selector: 'app-visualizar-consulta',
+  templateUrl: './visualizar-consulta.component.html',
+  styleUrls: ['./visualizar-consulta.component.scss']
 })
 export class ConsultaComponent implements AfterViewInit  {
   displayedColumns: string[] = [ 'data', 'medico', 'paciente', 'proprietario','status'];
