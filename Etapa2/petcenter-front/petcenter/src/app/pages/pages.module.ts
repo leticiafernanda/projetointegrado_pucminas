@@ -5,10 +5,12 @@ import { LoginPageComponent } from "./login/login-page.component";
 import { MaterialModule } from "../material.module";
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from "../core/core.module";
+import { RouterModule } from "@angular/router";
+import { ConsultaComponent } from './consulta/consulta.component';
 
 
 @NgModule({
-  declarations: [ LoginPageComponent, HomeComponent],
+  declarations: [ LoginPageComponent, HomeComponent, ConsultaComponent],
   imports: [CommonModule,  FormsModule,MaterialModule,CoreModule],
   exports: [ LoginPageComponent]
 })

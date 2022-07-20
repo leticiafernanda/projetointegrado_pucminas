@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginPageComponent } from './pages/login/login-page.component';
 
 const routes: Routes = [  
 { path: "login", redirectTo: "" },
 { path: "", component: LoginPageComponent },
-{ path: "home", component: HomeComponent, data: { title: "Home" } }
+{ path: "home", component: HomeComponent, data: { title: "Home" } },
+{ path: "visualizar-consulta", component: ConsultaComponent}
 ];
 
 @NgModule({

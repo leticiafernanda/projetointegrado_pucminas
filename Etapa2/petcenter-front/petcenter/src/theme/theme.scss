@@ -33,10 +33,10 @@ h5 {
 
 h6 {
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 24px;
-    color: mat.get-color-from-palette($app-primary, 900);
+    color: mat.get-color-from-palette($custom-colors, label);
     margin: 10px 0;
 }
 

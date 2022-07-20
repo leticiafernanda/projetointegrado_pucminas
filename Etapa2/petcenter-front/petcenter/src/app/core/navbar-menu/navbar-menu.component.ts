@@ -12,7 +12,7 @@ import { NavItem } from "./nav-item";
   styleUrls: ["./navbar-menu.component.scss"]
 })
 export class NavbarMenuComponent implements OnInit, OnDestroy {
-  
+
   menu: NavItem [] = [
     {
       displayName: 'Inicio',
@@ -53,7 +53,7 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
         },
         { 
           displayName: 'Visualizar',
-          route: ''
+          route: 'visualizar-consulta'
         },
         { 
           displayName: 'Cancelar',
@@ -101,7 +101,7 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
         },  
         {
           displayName: 'Sair do Sistema',
-          route: '',
+          route:  "",
         },  
   ];
 mobileQuery: MediaQueryList;
@@ -115,20 +115,11 @@ private _mobileQueryListener: () => void;
     
   }
 
-  ngOnInit() {
- 
-  
-  }
+  ngOnInit() {}
 
-  ngOnDestroy() {
-  
-  }
+  ngOnDestroy() {}
 
-  onCollapse() {
-   
-  }
+  onCollapse() {}
 
-  logout() {   
-   
-  }
+  logout() { }
 }
