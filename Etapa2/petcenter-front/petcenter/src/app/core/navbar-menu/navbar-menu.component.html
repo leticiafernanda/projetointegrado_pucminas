@@ -19,7 +19,7 @@
                     </mat-panel-title>
                   </mat-expansion-panel-header>
                   <span *ngFor="let child of item.children">
-                    <mat-list-item routerLink="[child.route]">                     
+                    <mat-list-item [routerLink]="[child.route]" routerLinkActive="active">                     
                       <div fxLayout="row" fxLayoutAlign="space-between center" >                       
                         {{child.displayName}}
                       </div>
@@ -29,7 +29,7 @@
                 </mat-accordion>
                 </span>
                 <span *ngIf="!item.children || item.children.length === 0">
-              <mat-list-item routerLink="[item.route]">               
+              <mat-list-item [routerLink]="[item.route]" routerLinkActive="active">               
                 <div fxLayout="row" fxLayoutAlign="space-between center">                
                   {{item.displayName}}
                 </div>
@@ -38,3 +38,4 @@
                 </span>
             </mat-nav-list>
         </mat-sidenav>
+    </mat-sidenav-container>

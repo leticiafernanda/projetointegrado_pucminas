@@ -10,7 +10,7 @@ import { NavbarMenuComponent } from "./navbar-menu/navbar-menu.component";
 
 @NgModule({
   declarations: [NavbarComponent,NavbarMenuComponent],
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule,RouterModule ],
   exports: [NavbarComponent,NavbarMenuComponent ]
 })
 export class CoreModule {}

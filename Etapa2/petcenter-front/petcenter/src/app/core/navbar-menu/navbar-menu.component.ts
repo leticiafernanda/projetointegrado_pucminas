@@ -53,7 +53,7 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
         },
         { 
           displayName: 'Visualizar',
-          route: 'visualizar-consulta'
+          route: '/visualizar-consulta'
         },
         { 
           displayName: 'Cancelar',

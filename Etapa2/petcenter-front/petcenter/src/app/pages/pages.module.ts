@@ -11,7 +11,7 @@ import { ConsultaComponent } from './visualizar-consulta/visualizar-consulta.com
 
 @NgModule({
   declarations: [ LoginPageComponent, HomeComponent, ConsultaComponent],
-  imports: [CommonModule,  FormsModule,MaterialModule,CoreModule],
+  imports: [CommonModule,  FormsModule,MaterialModule,CoreModule,RouterModule.forChild([])],
   exports: [ LoginPageComponent]
 })
 export class PagesModule {}
