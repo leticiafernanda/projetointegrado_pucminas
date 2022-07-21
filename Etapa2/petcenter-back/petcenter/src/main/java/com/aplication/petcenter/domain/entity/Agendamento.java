@@ -22,7 +22,6 @@ public class Agendamento implements Serializable {
 
     @Id
     @Column(name = "id_agendamento")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @OneToOne

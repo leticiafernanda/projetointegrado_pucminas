@@ -1,13 +1,12 @@
 package com.aplication.petcenter.domain.entity;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
-import com.aplication.petcenter.domain.entity.TipoPermissão;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @AllArgsConstructor
@@ -21,10 +20,9 @@ public class Permissoes implements Serializable {
 
     @Id
     @Column(name = "id_permissao")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "permissao")
     @Enumerated(EnumType.ORDINAL)
-    private TipoPermissão tipo;
+    private com.aplication.petcenter.domain.entity.TipoPermissão tipo;
 }

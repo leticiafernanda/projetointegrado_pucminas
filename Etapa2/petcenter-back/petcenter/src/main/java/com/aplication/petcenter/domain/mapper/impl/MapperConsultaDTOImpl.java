@@ -34,6 +34,7 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
                 .cliente(getProprietario(consulta))
                 .animal(getAnimal(consulta))
                 .servicos(getServicos(consulta))
+                .statusConsulta(consulta.getStatusConsulta())
                 .build();
 
     }

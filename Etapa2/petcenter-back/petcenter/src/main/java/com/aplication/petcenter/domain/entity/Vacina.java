@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +23,6 @@ public class Vacina implements Serializable {
 
     @Id
     @Column(name = "id_vacina")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(name = "nome", nullable = false)
     private String nome;

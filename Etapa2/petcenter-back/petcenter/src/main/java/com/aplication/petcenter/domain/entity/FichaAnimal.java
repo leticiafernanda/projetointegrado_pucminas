@@ -21,7 +21,6 @@ public class FichaAnimal implements Serializable {
 
     @Id
     @Column(name = "id_ficha_animal")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @OneToOne

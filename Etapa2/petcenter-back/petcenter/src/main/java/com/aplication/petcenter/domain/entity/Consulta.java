@@ -23,7 +23,6 @@ public class Consulta implements Serializable {
 
     @Id
     @Column(name = "id_consulta")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "data", nullable = false)
