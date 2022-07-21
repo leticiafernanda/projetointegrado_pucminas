@@ -9,6 +9,7 @@ import { MaterialModule } from './material.module';
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatCardModule } from '@angular/material/card';
     CoreModule,
     MaterialModule,
     PagesModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -47,7 +47,7 @@ const PACIENTE: string[] = [
   templateUrl: './visualizar-consulta.component.html',
   styleUrls: ['./visualizar-consulta.component.scss']
 })
-export class ConsultaComponent implements AfterViewInit  {
+export class VisualizarConsultaComponent implements AfterViewInit  {
   displayedColumns: string[] = [ 'data', 'medico', 'paciente', 'proprietario','status'];
   dataSource: MatTableDataSource<UserData>;
 
