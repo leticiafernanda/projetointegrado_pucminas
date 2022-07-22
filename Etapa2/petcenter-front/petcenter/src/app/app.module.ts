@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     PagesModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    NgHttpLoaderModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
