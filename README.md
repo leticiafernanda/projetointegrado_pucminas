@@ -28,11 +28,11 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
  
      - [ ] Arquitetura da solução
  
-     - [ ] Frameworks e tecnologias usadas
+     - [x] Frameworks e tecnologias usadas
  
-     - [ ] Estrutura base do front end
+     - [x] Estrutura base do front end
  
-     - [ ] Desenvolvimento de uma funcionalidade
+     - [x] Desenvolvimento de uma funcionalidade
      
      - [ ] Video
 
