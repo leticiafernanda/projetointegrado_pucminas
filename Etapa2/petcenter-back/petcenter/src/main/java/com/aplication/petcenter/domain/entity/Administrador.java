@@ -5,9 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -21,7 +23,6 @@ public class Administrador implements Serializable {
 
     @Id
     @Column(name = "id_administrador")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "nome", nullable = false)

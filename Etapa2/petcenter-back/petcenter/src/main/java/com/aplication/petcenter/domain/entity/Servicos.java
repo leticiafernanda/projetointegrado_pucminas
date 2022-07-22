@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -23,7 +21,6 @@ public class Servicos implements Serializable {
 
     @Id
     @Column(name = "id_servico")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "descricao", nullable = false)

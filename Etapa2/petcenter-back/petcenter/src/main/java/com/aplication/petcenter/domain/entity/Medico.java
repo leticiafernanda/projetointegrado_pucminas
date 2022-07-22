@@ -1,12 +1,13 @@
 package com.aplication.petcenter.domain.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
@@ -22,7 +23,6 @@ public class Medico extends Funcionario implements Serializable {
 
 
     @Column(name = "id_medico")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "CRMV", nullable = false)

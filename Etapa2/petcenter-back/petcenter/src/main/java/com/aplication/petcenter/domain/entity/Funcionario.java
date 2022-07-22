@@ -22,7 +22,6 @@ public class Funcionario implements Serializable {
 
     @Id
     @Column(name = "id_funcionario")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "nome", nullable = false)

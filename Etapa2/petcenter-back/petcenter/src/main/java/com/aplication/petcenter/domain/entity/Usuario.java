@@ -20,7 +20,6 @@ public class Usuario implements Serializable {
 
     @Id
     @Column(name = "id_usuario")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "email", unique = true)
