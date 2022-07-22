@@ -192,6 +192,7 @@ CREATE TABLE dbo.consulta (
 	cliente int4 NOT NULL,
 	animal int4 NOT NULL,
 	status varchar(255) NOT NULL,
+	medico int4 NULL,
 	CONSTRAINT pk_consulta PRIMARY KEY (id_consulta),
 	CONSTRAINT fk_consulta_on_animal FOREIGN KEY (animal) REFERENCES dbo.animal(id_animal),
 	CONSTRAINT fk_consulta_on_cliente FOREIGN KEY (cliente) REFERENCES dbo.cliente(id_cliente)
