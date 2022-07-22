@@ -1,38 +1,37 @@
-<navbar-menu></navbar-menu>
 <mat-card class="mat-elevation-z0 container">
     <div>
         <h6 class="visualizar-consultas">Consultas Agendadas</h6>
     </div>
     <mat-form-field appearance="standard">
-        <mat-label>Filtros</mat-label>
+        <mat-label>Pesquisar</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
     </mat-form-field>
 
     <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort>
-            <ng-container matColumnDef="data">
+        <table mat-table [dataSource]="datasource" matSort>
+            <ng-container matColumnDef="dataConsulta">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Data da Consulta </th>
-                <td mat-cell *matCellDef="let row"> {{row.data}}% </td>
+                <td mat-cell *matCellDef="let row"> {{row.data | date: 'd MMM y'}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="medico">
+            <ng-container matColumnDef="medicoNome">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Médico(a) Veterinário (a) </th>
                 <td mat-cell *matCellDef="let row"> {{row.medico}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="paciente">
+            <ng-container matColumnDef="pacienteNome">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Paciente </th>
-                <td mat-cell *matCellDef="let row"> {{row.paciente}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.animal.nome}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="proprietario">
+            <ng-container matColumnDef="proprietarioNome">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Proprietário </th>
-                <td mat-cell *matCellDef="let row"> {{row.proprietario}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.cliente.nome}} </td>
             </ng-container>
 
             <ng-container matColumnDef="status">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Status da Consulta </th>
-                <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.statusConsulta}} </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
