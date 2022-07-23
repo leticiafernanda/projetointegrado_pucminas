@@ -8,29 +8,29 @@
     </mat-form-field>
 
     <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="datasource" matSort>
+        <table mat-table [dataSource]="datasource">
             <ng-container matColumnDef="dataConsulta">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Data da Consulta </th>
+                <th mat-header-cell *matHeaderCellDef> Data da Consulta </th>
                 <td mat-cell *matCellDef="let row"> {{row.data | date: 'd MMM y'}} </td>
             </ng-container>
 
             <ng-container matColumnDef="medicoNome">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Médico(a) Veterinário (a) </th>
+                <th mat-header-cell *matHeaderCellDef> Médico(a) Veterinário (a) </th>
                 <td mat-cell *matCellDef="let row"> {{row.medico.nome}} </td>
             </ng-container>
 
             <ng-container matColumnDef="pacienteNome">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Paciente </th>
+                <th mat-header-cell *matHeaderCellDef> Paciente </th>
                 <td mat-cell *matCellDef="let row"> {{row.animal.nome}} </td>
             </ng-container>
 
             <ng-container matColumnDef="proprietarioNome">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Proprietário </th>
+                <th mat-header-cell *matHeaderCellDef> Proprietário </th>
                 <td mat-cell *matCellDef="let row"> {{row.cliente.nome}} </td>
             </ng-container>
 
             <ng-container matColumnDef="status">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status da Consulta </th>
+                <th mat-header-cell *matHeaderCellDef> Status da Consulta </th>
                 <td mat-cell *matCellDef="let row"> {{row.statusConsulta}} </td>
             </ng-container>
 

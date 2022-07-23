@@ -15,9 +15,7 @@ export class VisualizarConsultaComponent implements OnInit  {
   
 
   @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
-  @ViewChild(MatSort)
-  sort!: MatSort;
+  paginator!: MatPaginator; 
   datasource: any;
 
   constructor(
@@ -34,7 +32,6 @@ export class VisualizarConsultaComponent implements OnInit  {
         this.datasource = response; 
         this.datasource = new MatTableDataSource(response);
         this.datasource.paginator = this.paginator;
-        this.datasource.sort = this.sort;
       })
   }
 

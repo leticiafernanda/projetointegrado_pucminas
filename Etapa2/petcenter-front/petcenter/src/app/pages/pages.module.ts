@@ -6,8 +6,8 @@ import { MaterialModule } from "../material.module";
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from "../core/core.module";
 import { RouterModule } from "@angular/router";
-import { VisualizarConsultaComponent } from './consulta/visualizar-consulta/visualizar-consulta.component';
 import { ConsultaComponent } from './consulta/consulta.component';
+import { VisualizarConsultaComponent } from "./consulta/visualizar-consulta/visualizar-consulta.component";
 
 
 @NgModule({
