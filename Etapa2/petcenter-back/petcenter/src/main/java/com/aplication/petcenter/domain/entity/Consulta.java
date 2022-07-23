@@ -49,6 +49,10 @@ public class Consulta implements Serializable {
     @JoinColumn(name = "animal", nullable = false)
     private Animal animal;
 
+    @OneToOne
+    @JoinColumn(name = "medico", nullable = false)
+    private Medico medico;
+
     @Column(name = "status", nullable = false)
     private String statusConsulta;
 

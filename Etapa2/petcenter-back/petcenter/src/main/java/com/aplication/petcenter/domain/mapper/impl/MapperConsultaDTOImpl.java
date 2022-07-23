@@ -1,14 +1,8 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
-import com.aplication.petcenter.domain.dto.AnimalDTO;
-import com.aplication.petcenter.domain.dto.ClienteDTO;
-import com.aplication.petcenter.domain.dto.ConsultaDTO;
-import com.aplication.petcenter.domain.dto.ServicosDTO;
+import com.aplication.petcenter.domain.dto.*;
 import com.aplication.petcenter.domain.entity.Consulta;
-import com.aplication.petcenter.domain.mapper.MapperAnimalDTO;
-import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
-import com.aplication.petcenter.domain.mapper.MapperConsultaDTO;
-import com.aplication.petcenter.domain.mapper.MapperServicosDTO;
+import com.aplication.petcenter.domain.mapper.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +16,7 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
     private final MapperClienteDTO mapperClienteDTO;
     private final MapperAnimalDTO mapperAnimalDTO;
     private final MapperServicosDTO mapperServicoDTO;
+    private final MapperMedicoDTO mapperMedicoDTO;
 
     @Override
     public ConsultaDTO execute(Consulta consulta) {
@@ -33,6 +28,7 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
                 .custo(consulta.getCusto())
                 .cliente(getProprietario(consulta))
                 .animal(getAnimal(consulta))
+                .medico(getMedico(consulta))
                 .servicos(getServicos(consulta))
                 .statusConsulta(consulta.getStatusConsulta())
                 .build();
@@ -46,6 +42,11 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
     private AnimalDTO getAnimal(Consulta consulta) {
         return consulta.getAnimal() != null
                 ? mapperAnimalDTO.execute(consulta.getAnimal())
+                : null;
+    }
+    private MedicoDTO getMedico(Consulta consulta) {
+        return consulta.getMedico() != null
+                ? mapperMedicoDTO.execute(consulta.getMedico())
                 : null;
     }
 
