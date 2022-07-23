@@ -3,8 +3,8 @@
         <h6 class="visualizar-consultas">Consultas Agendadas</h6>
     </div>
     <mat-form-field appearance="standard">
-        <mat-label>Pesquisar</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        <mat-label>Pesquise pelo Status da Consulta</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Marcado" #input>
     </mat-form-field>
 
     <div class="mat-elevation-z8">
@@ -38,11 +38,11 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
             <tr class="mat-row" *matNoDataRow>
-                <td class="mat-cell" colspan="4">Filtro não encontrado. "{{input.value}}"</td>
+                <td class="mat-cell" colspan="4">"Que pena! Status da consulta não encontrado."{{input.value}}"</td>
             </tr>
         </table>
 
-        <mat-paginator [pageSizeOptions]="[10, 20 , 30]" aria-label="Select page of users"></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[10, 20 , 30]" aria-label="Select page of consult"></mat-paginator>
     </div>
 
 </mat-card>

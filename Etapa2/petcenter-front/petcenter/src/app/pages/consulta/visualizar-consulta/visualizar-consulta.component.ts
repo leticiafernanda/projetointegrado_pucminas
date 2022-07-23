@@ -41,7 +41,6 @@ export class VisualizarConsultaComponent implements OnInit  {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.datasource.filter = filterValue.trim().toLowerCase();
-
     if (this.datasource.paginator) {
       this.datasource.paginator.firstPage();
     }
