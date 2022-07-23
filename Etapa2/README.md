@@ -27,6 +27,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Angular 14.0.0](https://github.com/angular/angular-cli)
 - [Node v14.16.0](https://nodejs.dev/download/)
+- [Angular Material 14.0.0](https://material.angular.io/components/categories)
 
 
 Extras:
@@ -56,8 +57,11 @@ A aplicação já deve está funcional. Caso queira, basta importar em alguma ID
 $ npm install 
 $ npm start
 
+# Entre na pasta banco de dados (Etapa2\petcenter-back\petcenter\bancodedados) e pegue o DDL da aplicação:
+
+
 # Observações:
-- 
+- É importante ter o DDL na máquina local, para a execução da api do projeto.
 ```
 ### :mortar_board: Quem ministrou?
 - Letícia Fernanda
