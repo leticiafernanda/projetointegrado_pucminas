@@ -1,7 +1,19 @@
 ![img.png](img.png)
+![img_1.png](img_1.png)
 
 ## 💻 Projeto
-PetCenter é um sistema web construído com Java 17 e Angular 14. O objetivo é fornecer ao usuário mais comodidade e praticidade ao usuário.
+PetCenter é um sistema web construído com Java 17 e Angular 14 para o gerenciamento de processos em uma clínica veterinária, realizando:
+- Agendamento e cancelamento de consultas veterinárias;
+- Visualização dos exames a fazer e os autorizados;
+- Solicitação de exames;
+- Agendamento de aplicação de vacinas;
+- Visualização do histórico do animal;
+- Visualização da ficha do animal;
+- Pagamentos de consulta;
+- Cadastro e edição de dados do animal e dos usuários do sistema.
+
+Objetivando fornecer ao usuário, praticidade, autonomia e conforto, além de proporcionar de forma sucinta a apresentação de informações relevantes sobre os pets aos utilizadores do sistema.
+
 <br />
 
 # 🚀 Tecnologias
@@ -50,5 +62,5 @@ $ npm start
 ### :mortar_board: Quem ministrou?
 - Letícia Fernanda
 
-###### Trabalho de Conclusao de Curso de Pós-Graduação Puc Minas. Desenvolvido por Letícia Fernanda.
+###### Trabalho de Conclusão de Curso de Pós-Graduação Puc Minas. Desenvolvido por Letícia Fernanda.
 
