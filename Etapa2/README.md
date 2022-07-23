@@ -24,7 +24,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Java 17.0.4](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Maven 3.8.4](https://maven.apache.org/download.cgi)
 - [Lombok](https://projectlombok.org/download)
-- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Boot 2.7.0](https://spring.io/projects/spring-boot)
 - [Angular 14.0.0](https://github.com/angular/angular-cli)
 - [Node v14.16.0](https://nodejs.dev/download/)
 - [Angular Material 14.0.0](https://material.angular.io/components/categories)
