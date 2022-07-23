@@ -1,1 +1,48 @@
 <navbar-menu></navbar-menu>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-card class="home-card">
+            <mat-card-title-group>
+                <img mat-card-md-image src="../../../assets/animal.png">
+                <mat-card-title>Animal</mat-card-title>
+            </mat-card-title-group>
+            <mat-card-content>
+                {{longText}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="home-card">
+            <mat-card-title-group>
+                <mat-card-title>Consultas</mat-card-title>
+                <img mat-card-md-image src="../../../assets/consulta.png">
+            </mat-card-title-group>
+            <mat-card-content>
+                {{longText}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="home-card">
+            <mat-card-title-group>
+                <mat-card-title>Exames</mat-card-title>
+                <img mat-card-md-image src="../../../assets/exame.jpg">
+            </mat-card-title-group>
+            <mat-card-content>
+                {{longText}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="home-card">
+            <mat-card-title-group>
+                <mat-card-title>Configurações</mat-card-title>
+                <img mat-card-md-image src="../../../assets/user.png">
+            </mat-card-title-group>
+            <mat-card-content>
+                {{longText}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
