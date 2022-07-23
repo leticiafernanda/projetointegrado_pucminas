@@ -5,6 +5,19 @@ mat-grid-tile {
 .home-card {
     max-width: 70%;
     margin-bottom: 8px;
+    width: 500px;
+    cursor: pointer;
+}
+
+.label-card {
+    letter-spacing: 1px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.tile-card {
+    letter-spacing: 1px;
+    color: #ea8d1a;
 }
 
 .home-content {
