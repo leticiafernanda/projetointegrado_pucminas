@@ -24,7 +24,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
     
   - [ ] Etapa 2
  
-     - [ ] Padrão Arquitetural
+     - [x] Padrão Arquitetural
  
      - [ ] Arquitetura da solução
  
