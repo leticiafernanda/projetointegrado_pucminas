@@ -1,0 +1,324 @@
+-- DROP SCHEMA dbo;
+
+CREATE SCHEMA dbo AUTHORIZATION postgres;
+-- dbo.administrador definition
+
+-- Drop table
+
+-- DROP TABLE dbo.administrador;
+
+CREATE TABLE dbo.administrador (
+	id_administrador int4 NOT NULL,
+	nome varchar(255) NOT NULL,
+	telefone_celular varchar(255) NULL,
+	telefone_casa varchar(255) NULL,
+	email_corporativo varchar(255) NULL,
+	CONSTRAINT pk_administrador PRIMARY KEY (id_administrador),
+	CONSTRAINT uc_administrador_email_corporativo UNIQUE (email_corporativo)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.administrador OWNER TO postgres;
+GRANT ALL ON TABLE dbo.administrador TO postgres;
+
+
+-- dbo.cliente definition
+
+-- Drop table
+
+-- DROP TABLE dbo.cliente;
+
+CREATE TABLE dbo.cliente (
+	id_cliente int4 NOT NULL,
+	nome varchar(255) NOT NULL,
+	endereco varchar(255) NULL,
+	telefone_celular varchar(255) NULL,
+	telefone_casa varchar(255) NULL,
+	email varchar(255) NULL,
+	data_nascimento timestamp NULL,
+	CONSTRAINT pk_cliente PRIMARY KEY (id_cliente),
+	CONSTRAINT uc_cliente_email UNIQUE (email)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.cliente OWNER TO postgres;
+GRANT ALL ON TABLE dbo.cliente TO postgres;
+
+
+-- dbo.funcionario definition
+
+-- Drop table
+
+-- DROP TABLE dbo.funcionario;
+
+CREATE TABLE dbo.funcionario (
+	id_funcionario int4 NOT NULL,
+	nome varchar(255) NOT NULL,
+	endereco varchar(255) NULL,
+	telefone_celular varchar(255) NULL,
+	telefone_casa varchar(255) NULL,
+	email varchar(255) NULL,
+	data_nascimento timestamp NULL,
+	CONSTRAINT pk_funcionario PRIMARY KEY (id_funcionario),
+	CONSTRAINT uc_funcionario_email UNIQUE (email)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.funcionario OWNER TO postgres;
+GRANT ALL ON TABLE dbo.funcionario TO postgres;
+
+
+-- dbo.permissoes definition
+
+-- Drop table
+
+-- DROP TABLE dbo.permissoes;
+
+CREATE TABLE dbo.permissoes (
+	id_permissao int4 NOT NULL,
+	permissao int4 NULL,
+	CONSTRAINT pk_permissoes PRIMARY KEY (id_permissao)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.permissoes OWNER TO postgres;
+GRANT ALL ON TABLE dbo.permissoes TO postgres;
+
+
+-- dbo.servicos definition
+
+-- Drop table
+
+-- DROP TABLE dbo.servicos;
+
+CREATE TABLE dbo.servicos (
+	id_servico int4 NOT NULL,
+	descricao varchar(255) NOT NULL,
+	valor float8 NOT NULL,
+	CONSTRAINT pk_servicos PRIMARY KEY (id_servico)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.servicos OWNER TO postgres;
+GRANT ALL ON TABLE dbo.servicos TO postgres;
+
+
+-- dbo.usuario definition
+
+-- Drop table
+
+-- DROP TABLE dbo.usuario;
+
+CREATE TABLE dbo.usuario (
+	id_usuario int4 NOT NULL,
+	email varchar(255) NULL,
+	senha varchar(255) NULL,
+	permissao int4 NULL,
+	CONSTRAINT pk_usuario PRIMARY KEY (id_usuario),
+	CONSTRAINT uc_usuario_email UNIQUE (email),
+	CONSTRAINT uc_usuario_senha UNIQUE (senha)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.usuario OWNER TO postgres;
+GRANT ALL ON TABLE dbo.usuario TO postgres;
+
+
+-- dbo.vacina definition
+
+-- Drop table
+
+-- DROP TABLE dbo.vacina;
+
+CREATE TABLE dbo.vacina (
+	id_vacina int4 NOT NULL,
+	nome varchar(255) NOT NULL,
+	validade timestamp NULL,
+	fabricacao timestamp NULL,
+	lote varchar(255) NULL,
+	CONSTRAINT pk_vacina PRIMARY KEY (id_vacina)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.vacina OWNER TO postgres;
+GRANT ALL ON TABLE dbo.vacina TO postgres;
+
+
+-- dbo.animal definition
+
+-- Drop table
+
+-- DROP TABLE dbo.animal;
+
+CREATE TABLE dbo.animal (
+	id_animal int4 NOT NULL,
+	nome varchar(255) NOT NULL,
+	raca varchar(255) NULL,
+	especie varchar(255) NULL,
+	pelagem varchar(255) NULL,
+	id_cliente int4 NULL,
+	peso varchar(255) NULL,
+	idade int4 NULL,
+	genero varchar(255) NOT NULL,
+	CONSTRAINT pk_animal PRIMARY KEY (id_animal),
+	CONSTRAINT fk_animal_on_id_cliente FOREIGN KEY (id_cliente) REFERENCES dbo.cliente(id_cliente)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.animal OWNER TO postgres;
+GRANT ALL ON TABLE dbo.animal TO postgres;
+
+
+-- dbo.consulta definition
+
+-- Drop table
+
+-- DROP TABLE dbo.consulta;
+
+CREATE TABLE dbo.consulta (
+	id_consulta int4 NOT NULL,
+	"data" timestamp NOT NULL,
+	horario time NOT NULL,
+	pedido varchar(255) NOT NULL,
+	custo float8 NOT NULL,
+	cliente int4 NOT NULL,
+	animal int4 NOT NULL,
+	status varchar(255) NOT NULL,
+	medico int4 NULL,
+	CONSTRAINT pk_consulta PRIMARY KEY (id_consulta),
+	CONSTRAINT fk_consulta_on_animal FOREIGN KEY (animal) REFERENCES dbo.animal(id_animal),
+	CONSTRAINT fk_consulta_on_cliente FOREIGN KEY (cliente) REFERENCES dbo.cliente(id_cliente)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.consulta OWNER TO postgres;
+GRANT ALL ON TABLE dbo.consulta TO postgres;
+
+
+-- dbo.consulta_servicos definition
+
+-- Drop table
+
+-- DROP TABLE dbo.consulta_servicos;
+
+CREATE TABLE dbo.consulta_servicos (
+	consulta_id_consulta int4 NOT NULL,
+	servicos_id_servico int4 NOT NULL,
+	CONSTRAINT fk_conser_on_consulta FOREIGN KEY (consulta_id_consulta) REFERENCES dbo.consulta(id_consulta),
+	CONSTRAINT fk_conser_on_servicos FOREIGN KEY (servicos_id_servico) REFERENCES dbo.servicos(id_servico)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.consulta_servicos OWNER TO postgres;
+GRANT ALL ON TABLE dbo.consulta_servicos TO postgres;
+
+
+-- dbo.medico definition
+
+-- Drop table
+
+-- DROP TABLE dbo.medico;
+
+CREATE TABLE dbo.medico (
+	id_funcionario int4 NOT NULL,
+	crmv varchar(255) NOT NULL,
+	id_medico int4 NULL,
+	CONSTRAINT pk_medico PRIMARY KEY (id_funcionario),
+	CONSTRAINT fk_medico_on_id_funcionario FOREIGN KEY (id_funcionario) REFERENCES dbo.funcionario(id_funcionario)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.medico OWNER TO postgres;
+GRANT ALL ON TABLE dbo.medico TO postgres;
+
+
+-- dbo.rh definition
+
+-- Drop table
+
+-- DROP TABLE dbo.rh;
+
+CREATE TABLE dbo.rh (
+	id_funcionario int4 NOT NULL,
+	id_rh int4 NULL,
+	CONSTRAINT pk_rh PRIMARY KEY (id_funcionario),
+	CONSTRAINT fk_rh_on_id_funcionario FOREIGN KEY (id_funcionario) REFERENCES dbo.funcionario(id_funcionario)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.rh OWNER TO postgres;
+GRANT ALL ON TABLE dbo.rh TO postgres;
+
+
+-- dbo.agendamento definition
+
+-- Drop table
+
+-- DROP TABLE dbo.agendamento;
+
+CREATE TABLE dbo.agendamento (
+	id_agendamento int4 NOT NULL,
+	id_cliente int4 NULL,
+	id_medico int4 NULL,
+	"data" timestamp NULL,
+	hora time NULL,
+	telefone_celular varchar(255) NULL,
+	telefone_casa varchar(255) NULL,
+	email varchar(255) NULL,
+	CONSTRAINT pk_agendamento PRIMARY KEY (id_agendamento),
+	CONSTRAINT uc_agendamento_email UNIQUE (email),
+	CONSTRAINT fk_agendamento_on_id_cliente FOREIGN KEY (id_cliente) REFERENCES dbo.cliente(id_cliente),
+	CONSTRAINT fk_agendamento_on_id_medico FOREIGN KEY (id_medico) REFERENCES dbo.medico(id_funcionario)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.agendamento OWNER TO postgres;
+GRANT ALL ON TABLE dbo.agendamento TO postgres;
+
+
+-- dbo.ficha_animal definition
+
+-- Drop table
+
+-- DROP TABLE dbo.ficha_animal;
+
+CREATE TABLE dbo.ficha_animal (
+	id_ficha_animal int4 NOT NULL,
+	id_cliente int4 NOT NULL,
+	id_animal int4 NOT NULL,
+	id_medico int4 NOT NULL,
+	exames varchar(255) NOT NULL,
+	solicita_exames varchar(255) NULL,
+	procedimento varchar(255) NULL,
+	medicamentos varchar(255) NULL,
+	"data" timestamp NULL,
+	CONSTRAINT pk_fichaanimal PRIMARY KEY (id_ficha_animal),
+	CONSTRAINT fk_fichaanimal_on_id_animal FOREIGN KEY (id_animal) REFERENCES dbo.animal(id_animal),
+	CONSTRAINT fk_fichaanimal_on_id_cliente FOREIGN KEY (id_cliente) REFERENCES dbo.cliente(id_cliente),
+	CONSTRAINT fk_fichaanimal_on_id_medico FOREIGN KEY (id_medico) REFERENCES dbo.medico(id_funcionario)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.ficha_animal OWNER TO postgres;
+GRANT ALL ON TABLE dbo.ficha_animal TO postgres;
+
+
+
+
+-- Permissions
+
+GRANT ALL ON SCHEMA dbo TO postgres;
