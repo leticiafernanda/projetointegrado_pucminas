@@ -1,8 +1,6 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
-import com.aplication.petcenter.domain.dto.*;
 import com.aplication.petcenter.domain.entity.Consulta;
-import com.aplication.petcenter.domain.mapper.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

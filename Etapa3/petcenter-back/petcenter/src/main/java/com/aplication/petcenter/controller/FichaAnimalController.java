@@ -1,14 +1,12 @@
 package com.aplication.petcenter.controller;
 
 import com.aplication.petcenter.domain.dto.FichaAnimalDTO;
-import com.aplication.petcenter.domain.entity.Agendamento;
 import com.aplication.petcenter.domain.entity.FichaAnimal;
 import com.aplication.petcenter.service.FichaAnimalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
