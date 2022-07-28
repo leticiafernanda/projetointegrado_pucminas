@@ -26,7 +26,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
  
      - [x] Padrão Arquitetural
  
-     - [ ] Arquitetura da solução
+     - [x] Arquitetura da solução
  
      - [x] Frameworks e tecnologias usadas
  
@@ -34,7 +34,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
  
      - [x] Desenvolvimento de uma funcionalidade
      
-     - [ ] Video
+     - [x] Video
 
      - [ ] Histórico da apropriação de horas
 
