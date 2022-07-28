@@ -52,7 +52,7 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
           route: ''
         },
         { 
-          displayName: 'Consultas Agendadas',
+          displayName: 'Histórico de Consultas',
           route: '/visualizar-consulta'
         },
         { 
