@@ -24,5 +24,8 @@ public class Permissoes implements Serializable {
 
     @Column(name = "permissao")
     @Enumerated(EnumType.ORDINAL)
-    private com.aplication.petcenter.domain.entity.TipoPermissão tipo;
+    private com.aplication.petcenter.domain.entity.Enum.TipoPermissão tipo;
+
+    @Column(name = "nome_permissao")
+    private String nome;
 }

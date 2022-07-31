@@ -1,6 +1,6 @@
 package com.aplication.petcenter.domain.dto;
 
-import com.aplication.petcenter.domain.entity.TipoPermissão;
+import com.aplication.petcenter.domain.entity.Enum.TipoPermissão;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

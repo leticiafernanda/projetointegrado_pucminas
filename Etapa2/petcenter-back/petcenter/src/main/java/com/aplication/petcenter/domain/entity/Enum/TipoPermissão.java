@@ -1,4 +1,4 @@
-package com.aplication.petcenter.domain.entity;
+package com.aplication.petcenter.domain.entity.Enum;
 
 import lombok.Getter;
 
@@ -7,7 +7,7 @@ public enum TipoPermissão {
     ADM(0, "Administardor"),
     CLIENTE(1, "Cliente"),
     FUNCIONARIO(2, "Funcionário"),
-    RH(0, "Rh");
+    RH(3, "Rh");
 
     @Getter
     private int cod;
