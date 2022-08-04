@@ -54,7 +54,7 @@ $ npm start
 
 
 # Observações:
-- É importante ter o DDL na máquina local, para a execução da api do projeto.
+- É importante ter o DDL e o DML na máquina local, para a execução da api do projeto.
 ```
 ### :mortar_board: Quem ministrou?
 - Letícia Fernanda
