@@ -6,6 +6,7 @@ import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
 import com.aplication.petcenter.repository.ClienteRepository;
 import com.aplication.petcenter.service.ClienteService;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,6 +41,7 @@ public class ClienteServiceImpl implements ClienteService {
         clienteDTO.setId(clienteId);
         Cliente cliente = mapperClienteDTO.execute(clienteDTO, currentCliente);
         clienteRepository.save(cliente);
+
         return mapperClienteDTO.execute(cliente);
     }
 }

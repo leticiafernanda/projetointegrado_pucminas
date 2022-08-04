@@ -6,6 +6,7 @@ import com.aplication.petcenter.domain.entity.Servicos;
 import com.aplication.petcenter.domain.mapper.MapperServicosDTO;
 import com.aplication.petcenter.domain.mapper.MapperVacinaDTO;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
@@ -26,7 +27,6 @@ public class MapperServicosDTOImpl implements MapperServicosDTO {
                 .vacinas(getVacinas(servicos))
                 .build();
     }
-
     private List<VacinaDTO> getVacinas(Servicos servicos) {
         var vacinas = VacinaDTO.builder()
                 .id(servicos.getId())

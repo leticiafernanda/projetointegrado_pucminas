@@ -7,6 +7,7 @@ import com.aplication.petcenter.repository.AnimalRepository;
 import com.aplication.petcenter.repository.ClienteRepository;
 import com.aplication.petcenter.service.AnimalService;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -31,13 +32,12 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public AnimalDTO findById(Integer animalId) {
         var animal = animalRepository.findById(animalId).orElse(null);
-
         return mapperAnimalDTO.execute(animal);
     }
 
     @Override
     public void deleteById(Integer animalId) {
-         animalRepository.deleteById(animalId);;
+         animalRepository.deleteById(animalId);
     }
 
     @Transactional
@@ -53,6 +53,4 @@ public class AnimalServiceImpl implements AnimalService {
         animalRepository.save(animal);
         return mapperAnimalDTO.execute(animal);
     }
-
-
 }

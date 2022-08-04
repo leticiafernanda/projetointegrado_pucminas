@@ -4,6 +4,7 @@ import com.aplication.petcenter.domain.dto.*;
 import com.aplication.petcenter.domain.entity.Consulta;
 import com.aplication.petcenter.domain.mapper.*;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
@@ -54,6 +55,7 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
         var consultas = ServicosDTO.builder()
                 .id(consulta.getId())
                 .build();
+
         return Collections.singletonList(consultas);
     }
 }
