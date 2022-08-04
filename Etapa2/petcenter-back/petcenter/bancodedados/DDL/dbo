@@ -80,6 +80,7 @@ GRANT ALL ON TABLE dbo.funcionario TO postgres;
 CREATE TABLE dbo.permissoes (
 	id_permissao int4 NOT NULL,
 	permissao int4 NULL,
+	nome_permissao varchar NULL,
 	CONSTRAINT pk_permissoes PRIMARY KEY (id_permissao)
 );
 
@@ -106,28 +107,6 @@ CREATE TABLE dbo.servicos (
 
 ALTER TABLE dbo.servicos OWNER TO postgres;
 GRANT ALL ON TABLE dbo.servicos TO postgres;
-
-
--- dbo.usuario definition
-
--- Drop table
-
--- DROP TABLE dbo.usuario;
-
-CREATE TABLE dbo.usuario (
-	id_usuario int4 NOT NULL,
-	email varchar(255) NULL,
-	senha varchar(255) NULL,
-	permissao int4 NULL,
-	CONSTRAINT pk_usuario PRIMARY KEY (id_usuario),
-	CONSTRAINT uc_usuario_email UNIQUE (email),
-	CONSTRAINT uc_usuario_senha UNIQUE (senha)
-);
-
--- Permissions
-
-ALTER TABLE dbo.usuario OWNER TO postgres;
-GRANT ALL ON TABLE dbo.usuario TO postgres;
 
 
 -- dbo.vacina definition
@@ -177,52 +156,6 @@ ALTER TABLE dbo.animal OWNER TO postgres;
 GRANT ALL ON TABLE dbo.animal TO postgres;
 
 
--- dbo.consulta definition
-
--- Drop table
-
--- DROP TABLE dbo.consulta;
-
-CREATE TABLE dbo.consulta (
-	id_consulta int4 NOT NULL,
-	"data" timestamp NOT NULL,
-	horario time NOT NULL,
-	pedido varchar(255) NOT NULL,
-	custo float8 NOT NULL,
-	cliente int4 NOT NULL,
-	animal int4 NOT NULL,
-	status varchar(255) NOT NULL,
-	medico int4 NULL,
-	CONSTRAINT pk_consulta PRIMARY KEY (id_consulta),
-	CONSTRAINT fk_consulta_on_animal FOREIGN KEY (animal) REFERENCES dbo.animal(id_animal),
-	CONSTRAINT fk_consulta_on_cliente FOREIGN KEY (cliente) REFERENCES dbo.cliente(id_cliente)
-);
-
--- Permissions
-
-ALTER TABLE dbo.consulta OWNER TO postgres;
-GRANT ALL ON TABLE dbo.consulta TO postgres;
-
-
--- dbo.consulta_servicos definition
-
--- Drop table
-
--- DROP TABLE dbo.consulta_servicos;
-
-CREATE TABLE dbo.consulta_servicos (
-	consulta_id_consulta int4 NOT NULL,
-	servicos_id_servico int4 NOT NULL,
-	CONSTRAINT fk_conser_on_consulta FOREIGN KEY (consulta_id_consulta) REFERENCES dbo.consulta(id_consulta),
-	CONSTRAINT fk_conser_on_servicos FOREIGN KEY (servicos_id_servico) REFERENCES dbo.servicos(id_servico)
-);
-
--- Permissions
-
-ALTER TABLE dbo.consulta_servicos OWNER TO postgres;
-GRANT ALL ON TABLE dbo.consulta_servicos TO postgres;
-
-
 -- dbo.medico definition
 
 -- Drop table
@@ -262,6 +195,29 @@ ALTER TABLE dbo.rh OWNER TO postgres;
 GRANT ALL ON TABLE dbo.rh TO postgres;
 
 
+-- dbo.usuario definition
+
+-- Drop table
+
+-- DROP TABLE dbo.usuario;
+
+CREATE TABLE dbo.usuario (
+	id_usuario int4 NOT NULL,
+	email varchar(255) NULL,
+	senha varchar(255) NULL,
+	permissao int4 NULL,
+	CONSTRAINT pk_usuario PRIMARY KEY (id_usuario),
+	CONSTRAINT uc_usuario_email UNIQUE (email),
+	CONSTRAINT uc_usuario_senha UNIQUE (senha),
+	CONSTRAINT usuario_fk FOREIGN KEY (permissao) REFERENCES dbo.permissoes(id_permissao)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.usuario OWNER TO postgres;
+GRANT ALL ON TABLE dbo.usuario TO postgres;
+
+
 -- dbo.agendamento definition
 
 -- Drop table
@@ -287,6 +243,53 @@ CREATE TABLE dbo.agendamento (
 
 ALTER TABLE dbo.agendamento OWNER TO postgres;
 GRANT ALL ON TABLE dbo.agendamento TO postgres;
+
+
+-- dbo.consulta definition
+
+-- Drop table
+
+-- DROP TABLE dbo.consulta;
+
+CREATE TABLE dbo.consulta (
+	id_consulta int4 NOT NULL,
+	"data" timestamp NOT NULL,
+	horario time NOT NULL,
+	pedido varchar(255) NOT NULL,
+	custo float8 NOT NULL,
+	cliente int4 NOT NULL,
+	animal int4 NOT NULL,
+	status varchar(255) NOT NULL,
+	medico int4 NULL,
+	CONSTRAINT pk_consulta PRIMARY KEY (id_consulta),
+	CONSTRAINT consulta_fk FOREIGN KEY (medico) REFERENCES dbo.medico(id_funcionario),
+	CONSTRAINT fk_consulta_on_animal FOREIGN KEY (animal) REFERENCES dbo.animal(id_animal),
+	CONSTRAINT fk_consulta_on_cliente FOREIGN KEY (cliente) REFERENCES dbo.cliente(id_cliente)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.consulta OWNER TO postgres;
+GRANT ALL ON TABLE dbo.consulta TO postgres;
+
+
+-- dbo.consulta_servicos definition
+
+-- Drop table
+
+-- DROP TABLE dbo.consulta_servicos;
+
+CREATE TABLE dbo.consulta_servicos (
+	consulta_id_consulta int4 NOT NULL,
+	servicos_id_servico int4 NOT NULL,
+	CONSTRAINT fk_conser_on_consulta FOREIGN KEY (consulta_id_consulta) REFERENCES dbo.consulta(id_consulta),
+	CONSTRAINT fk_conser_on_servicos FOREIGN KEY (servicos_id_servico) REFERENCES dbo.servicos(id_servico)
+);
+
+-- Permissions
+
+ALTER TABLE dbo.consulta_servicos OWNER TO postgres;
+GRANT ALL ON TABLE dbo.consulta_servicos TO postgres;
 
 
 -- dbo.ficha_animal definition
