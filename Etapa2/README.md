@@ -1,5 +1,12 @@
-![img.png](img.png)
-![img_1.png](img_1.png)
+![image](https://user-images.githubusercontent.com/32845746/182962249-5a843286-7582-46df-970e-cfac183bc8d5.png)
+
+![image](https://user-images.githubusercontent.com/32845746/182962207-b3152524-e57d-44b5-be51-1f40f69552b7.png)
+
+![image](https://user-images.githubusercontent.com/32845746/182962168-fb0ade04-9b2a-49ed-9a73-670c8d38fc3e.png)
+
+![image](https://user-images.githubusercontent.com/32845746/182962112-02f225f4-e3f7-49a2-9341-a1d113182094.png)
+
+![image](https://user-images.githubusercontent.com/32845746/182962056-1c5428f5-8f06-43a3-89e7-f415aca1db09.png)
 
 ## 💻 Projeto
 PetCenter é um sistema web construído com Java 17 e Angular 14 para o gerenciamento de processos em uma clínica veterinária, realizando:
