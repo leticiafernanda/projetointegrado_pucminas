@@ -57,11 +57,16 @@ A aplicação já deve está funcional. Caso queira, basta importar em alguma ID
 $ npm install 
 $ npm start
 
-# Entre na pasta banco de dados (Etapa2\petcenter-back\petcenter\bancodedados) e pegue o DDL da aplicação:
+# Entre na pasta banco de dados (Etapa2\petcenter-back\petcenter\bancodedados) e pegue o DDL e o DML da aplicação:
 
 
 # Observações:
 - É importante ter o DDL e o DML na máquina local, para a execução da api do projeto.
+- No arquivo "application.properties", já tem um espaço comentado para que o usuário possa colocar endereço do banco de dados local.
+    spring.datasource.url=jdbc:postgresql://localhost/petcenter
+    spring.datasource.username=
+    spring.datasource.password=
+
 ```
 ### :mortar_board: Quem ministrou?
 - Letícia Fernanda
