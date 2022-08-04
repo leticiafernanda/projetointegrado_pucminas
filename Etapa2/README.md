@@ -62,7 +62,8 @@ $ npm start
 
 # Observações:
 - É importante ter o DDL e o DML na máquina local, para a execução da api do projeto.
-- No arquivo "application.properties", já tem um espaço comentado para que o usuário possa colocar endereço do banco de dados local.
+- No arquivo "application.properties", já tem um espaço comentado para que o usuário possa colocar endereço do banco de dados local:
+
     spring.datasource.url=jdbc:postgresql://localhost/petcenter
     spring.datasource.username=
     spring.datasource.password=
