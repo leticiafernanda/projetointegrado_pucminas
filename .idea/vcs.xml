@@ -10,5 +10,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Etapa2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Etapa2/petcenter-back/petcenter" vcs="Git" />
   </component>
 </project>
