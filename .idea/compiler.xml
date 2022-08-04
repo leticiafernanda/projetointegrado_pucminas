@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="petcenter" target="17" />
+      <module name="petcenter" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
