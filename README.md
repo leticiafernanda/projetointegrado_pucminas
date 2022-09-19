@@ -22,7 +22,7 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
      - [x] Histórico da apropriação de horas
      
     
-  - [ ] Etapa 2
+  - [x] Etapa 2
  
      - [x] Padrão Arquitetural
  
@@ -36,7 +36,24 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
      
      - [x] Video
 
-     - [ ] Histórico da apropriação de horas
+     - [x] Histórico da apropriação de horas
+     
+     
+    - [x] Etapa 3
+ 
+     - [x] Padrão Arquitetural
+ 
+     - [x] Arquitetura da solução
+ 
+     - [x] Frameworks e tecnologias usadas
+ 
+     - [x] Estrutura base do front end
+ 
+     - [x] Desenvolvimento de uma funcionalidade
+     
+     - [x] Video
+
+     - [x] Histórico da apropriação de horas
 
 
  
