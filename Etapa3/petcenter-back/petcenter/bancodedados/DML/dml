@@ -1,0 +1,54 @@
+--Esses dados são dados da DML do banco, e já estão colocados na ordem exatada para serem preenchidos
+-- dbo.cliente 
+INSERT INTO dbo.cliente (id_cliente, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(1, 'Maria', 'Rua 10', '01234-5678', '1234-5678', 'maria@teste.com', '1970-01-01 00:00:00.000');
+INSERT INTO dbo.cliente (id_cliente, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(2, 'Pedro', 'Rua 15', '01234-5678', '1234-5678', 'pedro@teste.com', '2001-01-01 00:00:00.000');
+INSERT INTO dbo.cliente (id_cliente, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(3, 'Alice', 'Rua 20', '01234-5678', '1234-5678', 'alice@teste.com', '2001-06-30 00:00:00.000');
+INSERT INTO dbo.cliente (id_cliente, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(4, 'Arthur', 'Rua 30', '01234-5678', '1234-5678', 'arthur@teste.com', '2001-11-01 00:00:00.000');
+INSERT INTO dbo.cliente (id_cliente, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(5, 'Josana', 'Rua 40', '01234-5678', '1234-5678', 'josana@teste.com', '2001-04-01 00:00:00.000');
+INSERT INTO dbo.cliente (id_cliente, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(10, 'teste', 'Rua 15', '01234-5678', '1234-5678', 'teste@teste.com', '2001-01-01 00:00:00.000');
+INSERT INTO dbo.cliente (id_cliente, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(6, 'Helena Santos', 'Rua 10', '91234-5678', '1234-5678', 'helena@teste.com.br', '1994-10-14 00:00:00.000');
+
+-- dbo.animal
+INSERT INTO dbo.animal (id_animal, nome, raca, especie, pelagem, id_cliente, peso, idade, genero) VALUES(1, 'Lise', 'Buldogue', 'Cachorro', 'curto', 1, '10', 2, 'Feminino');
+INSERT INTO dbo.animal (id_animal, nome, raca, especie, pelagem, id_cliente, peso, idade, genero) VALUES(2, 'Vida', 'Viralata', 'Gato', 'curto', 2, '3', 1, 'Feminino');
+
+-- dbo.funcionario
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(1, 'Aline Moraes', 'Rua 3,N° 223,Ribeirão das Neves-MG', '(31) 99706-0199', '(31) 3660-1234', 'aline@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(2, 'Jose Antonio', 'Rua 3,N° 223, Belo Horizonte-MG', '(31) 98706-0190', '(31) 3660-5678', 'jose@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(3, 'Maria Antonieta', 'Rua 3,N° 223, Santa Luzia-MG', '(31) 98806-0198', '(31) 3660-7896', 'maria@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(4, 'Paula Fernandes', 'Rua 3,N° 223,Contagem-MG', '(31) 99706-0049', '(31) 3660-1777', 'paula@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(5, 'Pedro Paulo', 'Rua 3,N° 223, Belo Horizonte-MG', '(31) 98706-4234', '(31) 3660-5897', 'pedro@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(6, 'Maria Cristina', 'Rua 3,N° 223, Sabara-MG', '(31) 98806-2344', '(31) 3660-9393', 'mariacristina@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(7, 'Leticia Fernanda', 'Rua 3,N° 223, Lagoa Santa-MG', '(31) 98806-0167', '(31) 3660-7544', 'leticia@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(8, 'Arthur Aguiar', 'Rua 3,N° 223,Nova-lima-MG', '(31) 99706-0234', '(31) 3660-1222', 'arthur@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(9, 'Dayane Oliveira', 'Rua 3,N° 223, Ouro Preto-MG', '(31) 98706-4678', '(31) 3660-5999', 'dayane@teste.com.br', '1971-06-05 00:00:00.000');
+INSERT INTO dbo.funcionario (id_funcionario, nome, endereco, telefone_celular, telefone_casa, email, data_nascimento) VALUES(10, 'Antonio Carlos', 'Rua 3,N° 223, Mariana-MG', '(31) 98806-410', '(31) 3660-2358', 'antonio@teste.com.br', '1971-06-05 00:00:00.000');
+
+
+-- dbo.medico
+INSERT INTO dbo.medico (id_funcionario, crmv, id_medico) VALUES(1, '15123', 1);
+INSERT INTO dbo.medico (id_funcionario, crmv, id_medico) VALUES(2, '22333', 2);
+INSERT INTO dbo.medico (id_funcionario, crmv, id_medico) VALUES(3, '44445', 3);
+INSERT INTO dbo.medico (id_funcionario, crmv, id_medico) VALUES(4, '66666', 4);
+INSERT INTO dbo.medico (id_funcionario, crmv, id_medico) VALUES(5, '78797', 5);
+
+-- dbo.consulta
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(1, '2022-08-21 00:00:00.000', '15:00:00', 'Indefinido', 50.0, 1, 1, 'Marcado', 1);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(2, '2022-07-21 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 2, 'Cancelado', 2);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(3, '2022-06-21 00:00:00.000', '15:00:00', 'Indefinido', 50.0, 1, 1, 'Atendido', 1);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(4, '2022-08-08 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 2, 'Marcado', 2);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(5, '2022-10-01 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 1, 'Marcado', 1);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(6, '2022-07-02 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 2, 'Atendido', 2);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(7, '2022-04-21 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 1, 'Atendido', 1);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(8, '2022-09-19 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 2, 'Marcado', 2);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(9, '2022-03-11 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 1, 'Cancelado', 1);
+INSERT INTO dbo.consulta (id_consulta, "data", horario, pedido, custo, cliente, animal, status, medico) VALUES(10, '2022-01-20 00:00:00.000', '16:00:00', 'Indefinido', 50.0, 1, 2, 'Cancelado', 1);
+
+-- dbo.permissões
+INSERT INTO dbo.permissoes (id_permissao, permissao, nome_permissao) VALUES(1, 0, 'Administardor');
+INSERT INTO dbo.permissoes (id_permissao, permissao, nome_permissao) VALUES(2, 1, 'Cliente');
+INSERT INTO dbo.permissoes (id_permissao, permissao, nome_permissao) VALUES(3, 2, 'Funcionário');
+INSERT INTO dbo.permissoes (id_permissao, permissao, nome_permissao) VALUES(4, 3, 'Rh');
+
+-- dbo.usuário
+INSERT INTO dbo.usuario (id_usuario, email, senha, permissao) VALUES(1, 'adm@adm.com', 'adm', 1);
