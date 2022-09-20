@@ -1,0 +1,71 @@
+<navbar-menu></navbar-menu>
+
+<mat-card class=" container">
+    <div>
+        <h6 class="cadastro"> Edição de dados do Animal</h6>
+    </div>
+    <form class="form">
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-position" appearance="fill">
+                    <mat-label>Nome</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Raça</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-position" appearance="fill">
+                    <mat-label>Espécie</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Pelagem</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-position" appearance="fill">
+                    <mat-label>Peso</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Gênero</mat-label>
+                    <mat-select>
+                        <mat-option>
+
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-position" appearance="fill">
+                    <mat-label>Idade</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Proprietário</mat-label>
+                    <mat-select>
+                        <mat-option>
+
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+    <div class="buttons-actions">
+        <button mat-raised-button color="primary" type="submit" (click)="submit()">Salvar</button>
+    </div>
+
+</mat-card>

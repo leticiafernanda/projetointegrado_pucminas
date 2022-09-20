@@ -17,18 +17,17 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
     {
       displayName: 'Inicio',
       route: '/home',
-    },        
+    },
     {
       displayName: 'Animal',
-      route: 'animal',
       children: [
         {
           displayName: 'Cadastros ',
-          route: ''
+          route: '/animal/cadastrar-animal'
         },
         {
           displayName: 'Edição ',
-          route: ''
+          route: '/animal/edicao-animal'
         },
         {
           displayName: 'Exclusão ',
@@ -51,11 +50,11 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
           displayName: 'Agendar',
           route: ''
         },
-        { 
+        {
           displayName: 'Histórico de Consultas',
           route: '/visualizar-consulta'
         },
-        { 
+        {
           displayName: 'Cancelar',
           route: ''
         }
@@ -90,19 +89,19 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
         {
           displayName: 'Pagamentos',
           route: '',
-        },  
+        },
         {
           displayName: 'Locais de Atendimento de Urgência',
           route: '',
-        },  
+        },
         {
           displayName: 'Sobre o PETCENTER',
           route: '',
-        },  
+        },
         {
           displayName: 'Sair do Sistema',
           route:  "",
-        },  
+        },
   ];
 mobileQuery: MediaQueryList;
 
@@ -112,7 +111,7 @@ private _mobileQueryListener: () => void;
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    
+
   }
 
   ngOnInit() {}

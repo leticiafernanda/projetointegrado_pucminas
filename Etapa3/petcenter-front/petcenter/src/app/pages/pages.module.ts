@@ -8,10 +8,14 @@ import { CoreModule } from "../core/core.module";
 import { RouterModule } from "@angular/router";
 import { ConsultaComponent } from './consulta/consulta.component';
 import { VisualizarConsultaComponent } from "./consulta/visualizar-consulta/visualizar-consulta.component";
+import { CadastrarAnimalComponent } from "./animal/cadastrar-animal/cadastrar-animal.component";
+import { AnimalComponent } from "./animal/animal.component";
+import { EdicaoAnimalComponent } from "./animal/edicao-animal/edicao-animal.component";
 
 
 @NgModule({
-  declarations: [ LoginPageComponent, HomeComponent, VisualizarConsultaComponent, ConsultaComponent],
+  declarations: [ LoginPageComponent, HomeComponent, VisualizarConsultaComponent, ConsultaComponent,CadastrarAnimalComponent,
+    AnimalComponent,EdicaoAnimalComponent],
   imports: [CommonModule,  FormsModule,MaterialModule,CoreModule,RouterModule.forChild([])],
   exports: [ LoginPageComponent]
 })
