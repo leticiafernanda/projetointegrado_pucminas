@@ -4,16 +4,20 @@
     <div>
         <h6 class="cadastro"> Edição de dados do Animal</h6>
     </div>
-    <form class="form">
+    <form class="form" [formGroup]="editForm">
         <div class="form-group">
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
                     <mat-label>Nome</mat-label>
-                    <input matInput>
+                    <mat-select formControlName="nome">
+                        <mat-option *ngFor="let nome of nomeAnimalList" [value]="nome">
+                            {{nome}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Raça</mat-label>
-                    <input matInput>
+                    <input name="raca" formControlName="raca" matInput>
                 </mat-form-field>
             </div>
         </div>
@@ -21,11 +25,11 @@
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
                     <mat-label>Espécie</mat-label>
-                    <input matInput>
+                    <input name="especie" formControlName="especie" matInput>
                 </mat-form-field>
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Pelagem</mat-label>
-                    <input matInput>
+                    <input name="pelagem" formControlName="pelagem" matInput>
                 </mat-form-field>
             </div>
         </div>
@@ -33,13 +37,13 @@
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
                     <mat-label>Peso</mat-label>
-                    <input matInput>
+                    <input name="peso" formControlName="peso" matInput>
                 </mat-form-field>
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Gênero</mat-label>
-                    <mat-select>
-                        <mat-option>
-
+                    <mat-select formControlName="genero">
+                        <mat-option *ngFor="let genero of generoAnimalList" [value]="genero.name">
+                            {{genero.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -50,14 +54,14 @@
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
                     <mat-label>Idade</mat-label>
-                    <input matInput>
+                    <input name="idade" formControlName="idade" matInput>
                 </mat-form-field>
 
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Proprietário</mat-label>
-                    <mat-select>
-                        <mat-option>
-
+                    <mat-select formControlName="proprietario">
+                        <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario">
+                            {{proprietario}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

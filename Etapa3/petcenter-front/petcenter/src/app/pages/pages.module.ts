@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginPageComponent } from "./login/login-page.component";
 import { MaterialModule } from "../material.module";
 import { HomeComponent } from './home/home.component';
@@ -17,7 +17,9 @@ import { ExcluirAnimalComponent } from "./animal/excluir-animal/excluir-animal.c
 @NgModule({
   declarations: [ LoginPageComponent, HomeComponent, VisualizarConsultaComponent, ConsultaComponent,CadastrarAnimalComponent,
     AnimalComponent,EditarAnimalComponent,ExcluirAnimalComponent],
-  imports: [CommonModule,  FormsModule,MaterialModule,CoreModule,RouterModule.forChild([])],
-  exports: [ LoginPageComponent]
+  imports: [CommonModule,  FormsModule,MaterialModule,CoreModule,RouterModule.forChild([]),ReactiveFormsModule],
+  exports: [ LoginPageComponent, CommonModule,
+    FormsModule,
+    ReactiveFormsModule]
 })
 export class PagesModule {}
