@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EdicaoAnimalComponent } from './edicao-animal.component';
+import { EditarAnimalComponent } from './editar-animal.component';
 
 describe('EdicaoAnimalComponent', () => {
-  let component: EdicaoAnimalComponent;
-  let fixture: ComponentFixture<EdicaoAnimalComponent>;
+  let component: EditarAnimalComponent;
+  let fixture: ComponentFixture<EditarAnimalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EdicaoAnimalComponent ]
+      declarations: [ EditarAnimalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EdicaoAnimalComponent);
+    fixture = TestBed.createComponent(EditarAnimalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

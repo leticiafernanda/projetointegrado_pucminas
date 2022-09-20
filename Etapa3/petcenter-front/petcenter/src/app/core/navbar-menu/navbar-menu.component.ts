@@ -27,11 +27,11 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
         },
         {
           displayName: 'Edição ',
-          route: '/animal/edicao-animal'
+          route: '/animal/editar-animal'
         },
         {
           displayName: 'Exclusão ',
-          route: ''
+          route: '/animal/excluir-animal'
         },
         {
           displayName: 'Ficha',

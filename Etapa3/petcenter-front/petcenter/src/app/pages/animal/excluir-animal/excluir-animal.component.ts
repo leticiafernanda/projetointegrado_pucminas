@@ -6,11 +6,11 @@ import { ConsultaData } from 'src/app/models/consulta.interface';
 import { ConsultaService } from 'src/app/services/consulta.service';
 
 @Component({
-  selector: 'app-edicao-animal',
-  templateUrl: './edicao-animal.component.html',
-  styleUrls: ['./edicao-animal.component.scss']
+  selector: 'app-excluir-animal',
+  templateUrl: './excluir-animal.component.html',
+  styleUrls: ['./excluir-animal.component.scss']
 })
-export class EdicaoAnimalComponent implements OnInit  {
+export class ExcluirAnimalComponent implements OnInit  {
 
   constructor(
     private consultaService: ConsultaService
