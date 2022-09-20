@@ -23,6 +23,11 @@ public class ClienteController {
         List<ClienteDTO> retorno = clienteService.findClienteList();
         return ResponseEntity.ok(retorno);
     }
+    @GetMapping("/{id_cliente}")
+    public ResponseEntity<ClienteDTO> findOne(@PathVariable(value = "id_cliente") Integer clienteId) {
+        return ResponseEntity.ok(animalService.findById(clienteId));
+    }
+
     @DeleteMapping("/{id_cliente}")
     public ResponseEntity<Void> deleteCliente(@PathVariable(value = "id_cliente") Integer clienteId) {
         clienteService.deleteById(clienteId);
