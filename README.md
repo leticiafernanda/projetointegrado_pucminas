@@ -41,19 +41,17 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
           
   - [x] Etapa 3
  
-     - [x] Padrão Arquitetural
+     - [x] Modelo relacional 
  
-     - [x] Arquitetura da solução
+     - [x] Desenvolvimento de funcionalidades
  
-     - [x] Frameworks e tecnologias usadas
+     - [] Plano e Relatório de testes de software
  
-     - [x] Estrutura base do front end
- 
-     - [x] Desenvolvimento de uma funcionalidade
-     
-     - [x] Video
+     - [] Avaliação retrospectiva
+      
+     - [] Video
 
-     - [x] Histórico da apropriação de horas
+     - [] Histórico da apropriação de horas
 
 
  
