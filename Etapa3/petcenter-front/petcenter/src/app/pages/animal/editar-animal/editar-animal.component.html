@@ -8,10 +8,10 @@
         <div class="form-group">
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
-                    <mat-label>Nome</mat-label>
-                    <mat-select formControlName="nome">
-                        <mat-option *ngFor="let nome of nomeAnimalList" [value]="nome">
-                            {{nome}}
+                    <mat-label>Nome do Animal</mat-label>
+                    <mat-select formControlName="id" (selectionChange)="handleChange($event)">
+                        <mat-option *ngFor="let animal of nomeAnimalList" [value]="animal.id">
+                            {{animal.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -60,8 +60,8 @@
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Proprietário</mat-label>
                     <mat-select formControlName="proprietario">
-                        <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario">
-                            {{proprietario}}
+                        <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario.nome">
+                            {{proprietario.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

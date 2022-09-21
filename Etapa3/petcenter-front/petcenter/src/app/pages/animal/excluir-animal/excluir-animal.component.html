@@ -2,16 +2,16 @@
 
 <mat-card class=" container">
     <div>
-        <h6 class="cadastro"> Excluir de dados do Animal</h6>
+        <h6 class="delete"> Excluir os dados do Animal</h6>
     </div>
     <form class="form" [formGroup]="deleteForm">
         <div class="form-group">
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
-                    <mat-label>Nome</mat-label>
-                    <mat-select formControlName="nome" [disabled]="true">
-                        <mat-option *ngFor="let nome of nomeAnimalList" [value]="nome">
-                            {{nome}}
+                    <mat-label>Nome do Animal</mat-label>
+                    <mat-select formControlName="id" (selectionChange)="handleChange($event)">
+                        <mat-option *ngFor="let animal of nomeAnimalList" [value]="animal.id">
+                            {{animal.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -41,7 +41,7 @@
                 </mat-form-field>
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Gênero</mat-label>
-                    <mat-select formControlName="genero" [disabled]="true">
+                    <mat-select formControlName="genero">
                         <mat-option *ngFor="let genero of generoAnimalList" [value]="genero.name">
                             {{genero.name}}
                         </mat-option>
@@ -59,9 +59,9 @@
 
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Proprietário</mat-label>
-                    <mat-select formControlName="proprietario" [disabled]="true">
-                        <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario">
-                            {{proprietario}}
+                    <mat-select formControlName="proprietario">
+                        <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario.nome">
+                            {{proprietario.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -69,7 +69,7 @@
         </div>
     </form>
     <div class="buttons-actions">
-        <button mat-raised-button color="primary" type="submit" (click)="submit()">Excluir</button>
+        <button mat-raised-button color="primary" type="delete" (click)="delete()">Excluir</button>
     </div>
 
 </mat-card>

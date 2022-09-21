@@ -13,9 +13,10 @@ export class ExcluirAnimalComponent implements OnInit  {
     nomeAnimalList!: Array<any>;
     proprietarioAnimalList!: Array<any>;
     generoAnimalList: any[] = [
-      { name: GeneroEnum.F },
-      { name: GeneroEnum.M },
+      { name: GeneroEnum.FEMININO },
+      { name: GeneroEnum.MASCULINO },
     ];
+  idAnimal!: string;
 
     constructor(
       private animalService: AnimalService  ) {
@@ -30,7 +31,8 @@ export class ExcluirAnimalComponent implements OnInit  {
 
     createEditForm(){
       this.deleteForm = new FormGroup({
-        nome: new FormControl('', [Validators.required, Validators.minLength(40)]),
+        id:new FormControl('', [Validators.required]),
+        nome: new FormControl('', [Validators.required]),
         raca: new FormControl('', [ Validators.minLength(40)]),
         especie: new FormControl('', [ Validators.minLength(40)]),
         pelagem: new FormControl('', [Validators.minLength(40)]),
@@ -42,19 +44,38 @@ export class ExcluirAnimalComponent implements OnInit  {
     }
     getAnimal(){
       this.animalService.getAnimalList().subscribe((nomeAnimalList: Array<any>) => {
-        this.nomeAnimalList = nomeAnimalList.map(function(e)
-        { return e.nome; } );
-      })
-    }
+        this.nomeAnimalList = nomeAnimalList.map((e) => {return {nome: e.nome, id: e.id}} )
+    });
+  }
     getProprietario(){
       this.animalService.getAnimalList().subscribe((proprietarioAnimalList: Array<any>) => {
-        this.proprietarioAnimalList = proprietarioAnimalList.map(function(e)
-        { return e.proprietario.nome; } );
+        this.proprietarioAnimalList = proprietarioAnimalList.map((e) => {return {nome: e.proprietario.nome, id: e.proprietario.id}})
       })
     }
+    build(id_animal: string) {
+      this.animalService.getAnimal(id_animal).subscribe((response) => {
+        this.deleteForm.setValue({
+          ...this.deleteForm.value,
+          id: response.id,
+          nome: response.nome,
+          raca: response.raca,
+          especie: response.especie,
+          pelagem: response.pelagem,
+          proprietario: response.proprietario.nome,
+          peso: response.peso,
+          idade: response.idade,
+          genero: response.genero
+          })
+        });
+      }
 
-    submit(){}
+     handleChange(event: any){
+      const id_animal = event.value;
+      this.idAnimal = event.value;
+      this.build(id_animal);
+     }
+
+    delete(){
+      this.animalService.deleteAnimal(this.idAnimal).subscribe()
+    }
   }
-
-
-
