@@ -9,7 +9,7 @@
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
                     <mat-label>Nome</mat-label>
-                    <input matInput>
+                    <input name="nome" formControlName="nome" matInput>
                 </mat-form-field>
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Raça</mat-label>
@@ -55,7 +55,7 @@
 
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Proprietário</mat-label>
-                    <mat-select formControlName="proprietario">
+                    <mat-select name="proprietario" formControlName="proprietario">
                         <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario.nome">
                             {{proprietario.nome}}
                         </mat-option>
@@ -65,7 +65,7 @@
         </div>
     </form>
     <div class="buttons-actions">
-        <button mat-raised-button color="primary" type="submit" (click)="submit()">Salvar</button>
+        <button mat-raised-button color="primary" type="create" (click)="create()">Salvar</button>
     </div>
 
 </mat-card>

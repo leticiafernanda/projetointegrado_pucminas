@@ -23,8 +23,8 @@ import { Animal } from "../models/animal.interface";
         catchError(() => of('Error while retrieving animal.'))
       );
     }
-    postAnimal(id_animal: string,animal: Animal): Observable<any>{
-      return this.httpClient.post(this.apiURL +`/v1/animal/${id_animal}`,animal);
+    postAnimal(animal: Animal): Observable<any>{
+      return this.httpClient.post(this.apiURL +`/v1/animal`,animal);
     }
     putAnimal(id_animal: string,animal: Animal): Observable<any>{
       return this.httpClient.post(this.apiURL +`/v1/animal/${id_animal}`,animal);

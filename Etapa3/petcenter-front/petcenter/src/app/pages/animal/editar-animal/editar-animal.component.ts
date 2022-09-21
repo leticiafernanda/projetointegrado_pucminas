@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
+import { Animal } from '../class/animal.class';
 
 @Component({
   selector: 'app-editar-animal',
@@ -16,29 +17,30 @@ export class EditarAnimalComponent implements OnInit  {
     { name: GeneroEnum.FEMININO },
     { name: GeneroEnum.MASCULINO },
   ];
+  idAnimal: any;
 
   constructor(
     private animalService: AnimalService  ) {
 
   }
   ngOnInit(): void {
-    this.createEditForm();
+    this.createEditForm(new Animal());
     this.getAnimal();
     this.getProprietario();
 
   }
 
-  createEditForm(){
+  createEditForm(animal: Animal){
     this.editForm = new FormGroup({
-      id:new FormControl('', [Validators.required]),
-      nome: new FormControl('', [Validators.required]),
-      raca: new FormControl('', [ Validators.minLength(40)]),
-      especie: new FormControl('', [ Validators.minLength(40)]),
-      pelagem: new FormControl('', [Validators.minLength(40)]),
-      proprietario: new FormControl('', [Validators.required]),
-      peso:new FormControl('', [ Validators.minLength(40)]),
-      idade: new FormControl('', [ Validators.minLength(40)]),
-      genero: new FormControl('', [Validators.required])
+      id:new FormControl(animal.id, [Validators.required]),
+      nome: new FormControl(animal.nome, [Validators.required]),
+      raca: new FormControl(animal.raca),
+      especie: new FormControl(animal.especie),
+      pelagem: new FormControl(animal.pelagem),
+      proprietario: new FormControl(animal.proprietario.id),
+      peso:new FormControl(animal.peso),
+      idade: new FormControl(animal.idade),
+      genero: new FormControl(animal.genero, [Validators.required])
     });
   }
   getAnimal(){
@@ -70,10 +72,15 @@ export class EditarAnimalComponent implements OnInit  {
 
    handleChange(event: any){
     const id_animal = event.value;
+    this.idAnimal = event.value;
     this.build(id_animal)
    }
 
-  submit(){}
+  submit(){
+    if(this.editForm.valid){
+    }
+  }
+
 }
 
 
