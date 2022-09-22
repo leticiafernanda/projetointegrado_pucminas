@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { catchError, map, Observable, of } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Animal } from "../models/animal.interface";
+import { AnimalBasic } from "../pages/animal/class/animalBasic.class";
 
 @Injectable({
     providedIn: 'root',
@@ -23,7 +24,7 @@ import { Animal } from "../models/animal.interface";
         catchError(() => of('Error while retrieving animal.'))
       );
     }
-    postAnimal(animal: Animal): Observable<any>{
+    postAnimal(animal: AnimalBasic): Observable<any>{
       return this.httpClient.post(this.apiURL +`/v1/animal`,animal);
     }
     putAnimal(id_animal: string,animal: Animal): Observable<any>{

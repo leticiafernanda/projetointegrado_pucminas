@@ -1,9 +1,10 @@
 import {  Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import {  FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
-import { Animal } from '../class/animal.class';
-import { Proprietario } from '../class/proprietario.class';
+import { AnimalBasic } from '../class/animalBasic.class';
+import { ModalSucessoComponent } from '../modal-sucesso/modal-sucesso.component';
 
 @Component({
   selector: 'app-cadastrar-animal',
@@ -20,16 +21,17 @@ export class CadastrarAnimalComponent implements OnInit  {
   ];
 
   constructor(
-    private animalService: AnimalService  ) {
+    private animalService: AnimalService,
+    public dialog: MatDialog) {
 
   }
   ngOnInit(): void {
-    this.createAnimalForm( new Animal());
+    this.createAnimalForm( new AnimalBasic());
     this.getProprietario();
 
   }
 
-  createAnimalForm(animal: Animal){
+  createAnimalForm(animal: AnimalBasic){
     this.createForm = new FormGroup({
       id:new FormControl(animal.id, [Validators.required]),
       nome: new FormControl(animal.nome, [Validators.required]),
@@ -39,7 +41,7 @@ export class CadastrarAnimalComponent implements OnInit  {
       peso:new FormControl(animal.peso),
       idade: new FormControl(animal.idade),
       genero: new FormControl(animal.genero, [Validators.required]),
-      proprietario: new FormControl(animal.proprietario,[Validators.required]),
+      idCliente: new FormControl(animal.idCliente,[Validators.required]),
     });
   }
 
@@ -52,20 +54,22 @@ export class CadastrarAnimalComponent implements OnInit  {
   }
 
   create(){
-      let createAnimal: Animal
+      let createAnimal: AnimalBasic
       createAnimal =  this.buildCreateAnimal()
       this.animalService.postAnimal(createAnimal)
-      .subscribe(()=>{})
+      .subscribe(()=>{
+        this.dialog.open(ModalSucessoComponent);
+      })
 
   }
   buildCreateAnimal() {
-    let createAnimal = new Animal();
+    let createAnimal = new AnimalBasic();
     createAnimal.id = Math.floor(Math.random() * 100) + 1;
     createAnimal.nome= this.createForm.value.nome;
     createAnimal.raca= this.createForm.value.raca;
     createAnimal.especie= this.createForm.value.especie;
     createAnimal.pelagem= this.createForm.value.pelagem;
-    createAnimal.proprietario = [ this.createForm.value.proprietario];
+    createAnimal.idCliente =  this.createForm.value.idCliente;
     createAnimal.peso= this.createForm.value.peso;
     createAnimal.idade= this.createForm.value.idade;
     createAnimal.genero= this.createForm.value.genero;

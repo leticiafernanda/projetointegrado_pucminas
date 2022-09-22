@@ -13,15 +13,35 @@ import { AnimalComponent } from "./animal/animal.component";
 import { EditarAnimalComponent } from "./animal/editar-animal/editar-animal.component";
 import { ExcluirAnimalComponent } from "./animal/excluir-animal/excluir-animal.component";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { ModalSucessoComponent } from "./animal/modal-sucesso/modal-sucesso.component";
+import { MatDialogModule } from "@angular/material/dialog";
 
 
 @NgModule({
-  declarations: [ LoginPageComponent, HomeComponent, VisualizarConsultaComponent, ConsultaComponent,CadastrarAnimalComponent,
-    AnimalComponent,EditarAnimalComponent,ExcluirAnimalComponent],
-  imports: [CommonModule,  FormsModule,MaterialModule,CoreModule,RouterModule.forChild([]),ReactiveFormsModule,MatFormFieldModule],
-  exports: [ LoginPageComponent,   CommonModule,
+  declarations: [
+    LoginPageComponent,
+    HomeComponent,
+    VisualizarConsultaComponent,
+    ConsultaComponent,
+    CadastrarAnimalComponent,
+    AnimalComponent,
+    EditarAnimalComponent,
+    ExcluirAnimalComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MaterialModule,
+    CoreModule,
+    RouterModule.forChild([]),
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatDialogModule],
+  exports: [
+    LoginPageComponent,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,]
+    MatFormFieldModule,
+    MatDialogModule]
 })
 export class PagesModule {}
