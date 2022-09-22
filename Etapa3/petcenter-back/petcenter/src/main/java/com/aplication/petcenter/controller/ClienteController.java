@@ -25,7 +25,7 @@ public class ClienteController {
     }
     @GetMapping("/{id_cliente}")
     public ResponseEntity<ClienteDTO> findOne(@PathVariable(value = "id_cliente") Integer clienteId) {
-        return ResponseEntity.ok(animalService.findById(clienteId));
+        return null;//ResponseEntity.ok(clienteService.findById(clienteId));
     }
 
     @DeleteMapping("/{id_cliente}")

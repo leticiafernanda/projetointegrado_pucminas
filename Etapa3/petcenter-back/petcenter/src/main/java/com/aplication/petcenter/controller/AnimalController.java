@@ -1,6 +1,7 @@
 package com.aplication.petcenter.controller;
 
 import com.aplication.petcenter.domain.dto.AnimalDTO;
+import com.aplication.petcenter.domain.dto.AnimalBasicDTO;
 import com.aplication.petcenter.domain.entity.Animal;
 import com.aplication.petcenter.service.AnimalService;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +35,7 @@ public class AnimalController {
         return ResponseEntity.noContent().build();
     }
     @PostMapping
-    public ResponseEntity<Void> createAnimal(@RequestBody Animal animal) {
+    public ResponseEntity<Void> createAnimal(@RequestBody AnimalBasicDTO animal) {
         animalService.save(animal);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

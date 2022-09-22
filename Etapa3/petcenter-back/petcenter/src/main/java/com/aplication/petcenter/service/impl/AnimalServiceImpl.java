@@ -1,6 +1,7 @@
 package com.aplication.petcenter.service.impl;
 
 import com.aplication.petcenter.domain.dto.AnimalDTO;
+import com.aplication.petcenter.domain.dto.AnimalBasicDTO;
 import com.aplication.petcenter.domain.entity.Animal;
 import com.aplication.petcenter.domain.mapper.MapperAnimalDTO;
 import com.aplication.petcenter.repository.AnimalRepository;
@@ -41,8 +42,9 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Transactional
-    public void save(Animal animal) {
-        animalRepository.save(animal);
+    public void save(AnimalBasicDTO animal) {
+        var createAnimal = mapperAnimalDTO.execute(animal);
+        animalRepository.save(createAnimal);
     }
 
     @Override
