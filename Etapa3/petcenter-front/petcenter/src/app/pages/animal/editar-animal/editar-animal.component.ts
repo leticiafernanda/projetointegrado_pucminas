@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
-import { Animal } from '../class/animal.class';
+import { Animal } from '../../../class/animal.class';
 
 @Component({
   selector: 'app-editar-animal',

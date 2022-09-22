@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { catchError, map, Observable, of } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Animal } from "../models/animal.interface";
-import { AnimalBasic } from "../pages/animal/class/animalBasic.class";
+import { AnimalBasic } from "../class/animalBasic.class";
 
 @Injectable({
     providedIn: 'root',

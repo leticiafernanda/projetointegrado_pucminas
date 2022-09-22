@@ -1,9 +1,10 @@
 import {  Component, OnInit } from '@angular/core';
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
-import { AnimalBasic } from '../class/animalBasic.class';
+import { AnimalBasic } from '../../../class/animalBasic.class';
 import { ModalSucessoComponent } from '../modal-sucesso/modal-sucesso.component';
 
 @Component({
@@ -22,7 +23,8 @@ export class CadastrarAnimalComponent implements OnInit  {
 
   constructor(
     private animalService: AnimalService,
-    public dialog: MatDialog) {
+    public dialog: MatDialog,
+    private router: Router) {
 
   }
   ngOnInit(): void {
@@ -58,7 +60,8 @@ export class CadastrarAnimalComponent implements OnInit  {
       createAnimal =  this.buildCreateAnimal()
       this.animalService.postAnimal(createAnimal)
       .subscribe(()=>{
-        this.dialog.open(ModalSucessoComponent);
+       // this.dialog.open(ModalSucessoComponent);
+       this.router.navigate(["/home"]);
       })
 
   }
