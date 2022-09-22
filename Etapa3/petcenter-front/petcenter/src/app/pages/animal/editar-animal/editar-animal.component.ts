@@ -37,7 +37,7 @@ export class EditarAnimalComponent implements OnInit  {
       raca: new FormControl(animal.raca),
       especie: new FormControl(animal.especie),
       pelagem: new FormControl(animal.pelagem),
-      proprietario: new FormControl(animal.proprietario.id),
+      proprietario: new FormControl(animal.proprietario),
       peso:new FormControl(animal.peso),
       idade: new FormControl(animal.idade),
       genero: new FormControl(animal.genero, [Validators.required])

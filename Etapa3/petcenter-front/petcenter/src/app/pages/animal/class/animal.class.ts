@@ -1,12 +1,12 @@
 import { Proprietario } from "./proprietario.class";
 
 export class Animal {
-    id!: string;
+    id!: number;
     nome!: string;
     raca!: string;
     especie!: string;
     pelagem!: string;
-    proprietario!: Proprietario;
+    proprietario!: Array<Proprietario>;
     peso!: string;
     idade!: number;
     genero!: string;

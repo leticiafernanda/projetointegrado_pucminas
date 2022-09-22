@@ -1,8 +1,9 @@
 import {  Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
 import { Animal } from '../class/animal.class';
+import { Proprietario } from '../class/proprietario.class';
 
 @Component({
   selector: 'app-cadastrar-animal',
@@ -35,12 +36,14 @@ export class CadastrarAnimalComponent implements OnInit  {
       raca: new FormControl(animal.raca),
       especie: new FormControl(animal.especie),
       pelagem: new FormControl(animal.pelagem),
-      proprietario: new FormControl(animal.proprietario),
       peso:new FormControl(animal.peso),
       idade: new FormControl(animal.idade),
-      genero: new FormControl(animal.genero, [Validators.required])
+      genero: new FormControl(animal.genero, [Validators.required]),
+      proprietario: new FormControl(animal.proprietario,[Validators.required]),
     });
   }
+
+
 
   getProprietario(){
     this.animalService.getAnimalList().subscribe((proprietarioAnimalList: Array<any>) => {
@@ -49,22 +52,20 @@ export class CadastrarAnimalComponent implements OnInit  {
   }
 
   create(){
-
       let createAnimal: Animal
       createAnimal =  this.buildCreateAnimal()
-      console.log(createAnimal)
       this.animalService.postAnimal(createAnimal)
       .subscribe(()=>{})
 
   }
   buildCreateAnimal() {
     let createAnimal = new Animal();
-    createAnimal.id = Math.floor(Date.now() * Math.random()).toString(36);
+    createAnimal.id = Math.floor(Math.random() * 100) + 1;
     createAnimal.nome= this.createForm.value.nome;
     createAnimal.raca= this.createForm.value.raca;
     createAnimal.especie= this.createForm.value.especie;
     createAnimal.pelagem= this.createForm.value.pelagem;
-    createAnimal.proprietario = this.createForm.value.proprietario.id;
+    createAnimal.proprietario = [ this.createForm.value.proprietario];
     createAnimal.peso= this.createForm.value.peso;
     createAnimal.idade= this.createForm.value.idade;
     createAnimal.genero= this.createForm.value.genero;

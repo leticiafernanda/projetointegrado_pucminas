@@ -5,7 +5,7 @@ export interface Animal {
     raca: string;
     especie: string;
     pelagem: string;
-    proprietario: Proprietario;
+    proprietario: Array<Proprietario>;
     peso: string;
     idade: number;
     genero: string;

@@ -12,14 +12,16 @@ import { CadastrarAnimalComponent } from "./animal/cadastrar-animal/cadastrar-an
 import { AnimalComponent } from "./animal/animal.component";
 import { EditarAnimalComponent } from "./animal/editar-animal/editar-animal.component";
 import { ExcluirAnimalComponent } from "./animal/excluir-animal/excluir-animal.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 
 @NgModule({
   declarations: [ LoginPageComponent, HomeComponent, VisualizarConsultaComponent, ConsultaComponent,CadastrarAnimalComponent,
     AnimalComponent,EditarAnimalComponent,ExcluirAnimalComponent],
-  imports: [CommonModule,  FormsModule,MaterialModule,CoreModule,RouterModule.forChild([]),ReactiveFormsModule],
-  exports: [ LoginPageComponent, CommonModule,
+  imports: [CommonModule,  FormsModule,MaterialModule,CoreModule,RouterModule.forChild([]),ReactiveFormsModule,MatFormFieldModule],
+  exports: [ LoginPageComponent,   CommonModule,
     FormsModule,
-    ReactiveFormsModule]
+    ReactiveFormsModule,
+    MatFormFieldModule,]
 })
 export class PagesModule {}
