@@ -11,6 +11,7 @@
 ## 💻 Projeto
 PetCenter é um sistema web construído com Java 17 e Angular 14 para o gerenciamento de processos em uma clínica veterinária, realizando:
 - Visualização do histórico de consultas do animal;
+- Cadastro, exclusão e edição dos dados do animal;
 
 Objetivando fornecer ao usuário, praticidade, autonomia e conforto, além de proporcionar de forma sucinta a apresentação de informações relevantes sobre os pets aos utilizadores do sistema.
 
