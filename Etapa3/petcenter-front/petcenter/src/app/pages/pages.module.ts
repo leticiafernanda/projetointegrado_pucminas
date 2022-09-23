@@ -15,7 +15,6 @@ import { ExcluirAnimalComponent } from "./animal/excluir-animal/excluir-animal.c
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { ModalSucessoComponent } from "./animal/modal-sucesso/modal-sucesso.component";
 import { MatDialogModule } from "@angular/material/dialog";
-import { AgendarConsultaComponent } from "./consulta/agendar-consulta/agendar-consulta.component";
 
 
 @NgModule({
@@ -28,7 +27,7 @@ import { AgendarConsultaComponent } from "./consulta/agendar-consulta/agendar-co
     AnimalComponent,
     EditarAnimalComponent,
     ExcluirAnimalComponent,
-    AgendarConsultaComponent],
+    ],
   imports: [
     CommonModule,
     FormsModule,
