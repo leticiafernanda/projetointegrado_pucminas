@@ -16,5 +16,5 @@ public interface AnimalService {
     void save(AnimalBasicDTO animal);
 
 
-    AnimalDTO updateById(AnimalDTO animalDTO, Integer animalId);
+    AnimalDTO updateById(AnimalBasicDTO animalDTO, Integer animalId);
 }

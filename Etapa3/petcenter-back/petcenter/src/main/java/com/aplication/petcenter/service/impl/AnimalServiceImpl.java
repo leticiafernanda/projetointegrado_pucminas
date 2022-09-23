@@ -48,7 +48,7 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public AnimalDTO updateById(AnimalDTO animalDTO, Integer animalId) {
+    public AnimalDTO updateById(AnimalBasicDTO animalDTO, Integer animalId) {
         var currentAnimal = animalRepository.findById(animalId).orElse(null);
         animalDTO.setId(animalId);
         Animal animal = mapperAnimalDTO.execute(animalDTO, currentAnimal);

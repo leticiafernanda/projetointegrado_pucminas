@@ -27,8 +27,8 @@ import { AnimalBasic } from "../class/animalBasic.class";
     postAnimal(animal: AnimalBasic): Observable<any>{
       return this.httpClient.post(this.apiURL +`/v1/animal`,animal);
     }
-    putAnimal(id_animal: string,animal: Animal): Observable<any>{
-      return this.httpClient.post(this.apiURL +`/v1/animal/${id_animal}`,animal);
+    putAnimal(id_animal: string,animal: AnimalBasic): Observable<any>{
+      return this.httpClient.put(this.apiURL +`/v1/animal/${id_animal}`,animal);
     }
     deleteAnimal(id_animal: string): Observable<any>{
       return  this.httpClient.delete(this.apiURL +`/v1/animal/${id_animal}`);

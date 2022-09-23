@@ -41,7 +41,7 @@ public class AnimalController {
     }
     @PutMapping("/{id_animal}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<AnimalDTO> updateAnimal(@PathVariable Integer animalId,  @RequestBody AnimalDTO animalDTO) {
+    public ResponseEntity<AnimalDTO> updateAnimal(@PathVariable(value = "id_animal") Integer animalId,  @RequestBody AnimalBasicDTO animalDTO) {
         return ResponseEntity.ok(animalService.updateById(animalDTO, animalId));
     }
     }

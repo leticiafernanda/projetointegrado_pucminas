@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AnimalBasic } from 'src/app/class/animalBasic.class';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
 import { Animal } from '../../../class/animal.class';
@@ -20,24 +22,25 @@ export class EditarAnimalComponent implements OnInit  {
   idAnimal: any;
 
   constructor(
-    private animalService: AnimalService  ) {
+    private animalService: AnimalService,
+    private router: Router  ) {
 
   }
   ngOnInit(): void {
-    this.createEditForm(new Animal());
+    this.createEditForm(new AnimalBasic());
     this.getAnimal();
     this.getProprietario();
 
   }
 
-  createEditForm(animal: Animal){
+  createEditForm(animal: AnimalBasic){
     this.editForm = new FormGroup({
       id:new FormControl(animal.id, [Validators.required]),
       nome: new FormControl(animal.nome, [Validators.required]),
       raca: new FormControl(animal.raca),
       especie: new FormControl(animal.especie),
       pelagem: new FormControl(animal.pelagem),
-      proprietario: new FormControl(animal.proprietario),
+      idCliente: new FormControl(animal.idCliente,[Validators.required]),
       peso:new FormControl(animal.peso),
       idade: new FormControl(animal.idade),
       genero: new FormControl(animal.genero, [Validators.required])
@@ -62,6 +65,7 @@ export class EditarAnimalComponent implements OnInit  {
         raca: response.raca,
         especie: response.especie,
         pelagem: response.pelagem,
+        clienteId: response.proprietario.id,
         proprietario: response.proprietario.nome,
         peso: response.peso,
         idade: response.idade,
@@ -77,8 +81,26 @@ export class EditarAnimalComponent implements OnInit  {
    }
 
   submit(){
-    if(this.editForm.valid){
-    }
+    let editAnimal: AnimalBasic
+    editAnimal =  this.buildEditAnimal()
+    this.animalService.putAnimal( this.idAnimal,editAnimal)
+    .subscribe(()=>{
+     // this.dialog.open(ModalSucessoComponent);
+     this.router.navigate(["/home"]);
+    })
+  }
+  buildEditAnimal() {
+    let editAnimal = new AnimalBasic();
+    editAnimal.id = Math.floor(Math.random() * 100) + 1;
+    editAnimal.nome= this.editForm.value.nome;
+    editAnimal.raca= this.editForm.value.raca;
+    editAnimal.especie= this.editForm.value.especie;
+    editAnimal.pelagem= this.editForm.value.pelagem;
+    editAnimal.idCliente =  this.editForm.value.idCliente;
+    editAnimal.peso= this.editForm.value.peso;
+    editAnimal.idade= this.editForm.value.idade;
+    editAnimal.genero= this.editForm.value.genero;
+    return editAnimal;
   }
 
 }

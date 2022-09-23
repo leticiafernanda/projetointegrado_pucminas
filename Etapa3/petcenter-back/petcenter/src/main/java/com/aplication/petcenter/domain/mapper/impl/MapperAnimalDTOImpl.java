@@ -35,14 +35,14 @@ public class MapperAnimalDTOImpl implements MapperAnimalDTO {
                 .raca(animal.getRaca())
                 .build();
     }
-    public Animal execute(AnimalDTO animalDTO, Animal currentAnimal) {
+    public Animal execute(AnimalBasicDTO animalDTO, Animal currentAnimal) {
         currentAnimal.setNome(animalDTO.getNome());
         currentAnimal.setEspecie(animalDTO.getEspecie());
         currentAnimal.setGenero(animalDTO.getGenero());
         currentAnimal.setIdade(animalDTO.getIdade());
         currentAnimal.setPelagem(animalDTO.getPelagem());
         currentAnimal.setPeso(animalDTO.getPeso());
-        currentAnimal.setProprietario(getProprietarioAnimal (animalDTO.getProprietario().getId()).orElse(null));
+        currentAnimal.setProprietario(getProprietarioId (animalDTO.getIdCliente()));
         currentAnimal.setRaca(animalDTO.getRaca());
         return currentAnimal;
     }
