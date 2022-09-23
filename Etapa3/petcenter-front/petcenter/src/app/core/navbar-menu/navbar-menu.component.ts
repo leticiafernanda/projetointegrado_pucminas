@@ -48,11 +48,11 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
       children: [
         {
           displayName: 'Agendar',
-          route: ''
+          route: '/consulta/agendar-consulta'
         },
         {
           displayName: 'Histórico de Consultas',
-          route: '/visualizar-consulta'
+          route: '/consulta/visualizar-consulta'
         },
         {
           displayName: 'Cancelar',
