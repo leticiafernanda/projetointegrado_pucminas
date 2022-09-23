@@ -13,7 +13,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PermissoesDTO implements Serializable {
-    private Integer id;
+
+	private static final long serialVersionUID = -6164872254959634372L;
+	
+	private Integer id;
     private TipoPermissão tipo;
     private String nome;
 }

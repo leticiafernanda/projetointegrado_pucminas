@@ -1,16 +1,21 @@
 package com.aplication.petcenter.controller;
 
-import com.aplication.petcenter.domain.dto.FichaAnimalDTO;
-import com.aplication.petcenter.domain.entity.Agendamento;
-import com.aplication.petcenter.domain.entity.FichaAnimal;
-import com.aplication.petcenter.service.FichaAnimalService;
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.aplication.petcenter.domain.dto.FichaAnimalDTO;
+import com.aplication.petcenter.domain.entity.FichaAnimal;
+import com.aplication.petcenter.service.FichaAnimalService;
+
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/v1/ficha")

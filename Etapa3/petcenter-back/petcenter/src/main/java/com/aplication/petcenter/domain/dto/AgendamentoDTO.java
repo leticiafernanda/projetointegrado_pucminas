@@ -14,7 +14,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AgendamentoDTO implements Serializable {
-    private  Integer id;
+ 	private static final long serialVersionUID = 2846353389532433168L;
+ 	
+	private  Integer id;
     private ClienteDTO proprietario;
     private MedicoDTO medico;
     private  Date data;

@@ -1,7 +1,5 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
-import java.util.Optional;
-
 import org.springframework.stereotype.Component;
 
 import com.aplication.petcenter.domain.dto.AnimalBasicDTO;
@@ -11,7 +9,6 @@ import com.aplication.petcenter.domain.entity.Animal;
 import com.aplication.petcenter.domain.entity.Cliente;
 import com.aplication.petcenter.domain.mapper.MapperAnimalDTO;
 import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
-import com.aplication.petcenter.repository.ClienteRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 public class MapperAnimalDTOImpl implements MapperAnimalDTO {
 
     private final MapperClienteDTO mapperClienteDTO;
-    private final ClienteRepository clienteRepository;
     @Override
     public AnimalDTO execute(Animal animal) {
         return AnimalDTO.builder()
@@ -69,12 +65,6 @@ public class MapperAnimalDTOImpl implements MapperAnimalDTO {
         return animal.getProprietario() != null
                 ? mapperClienteDTO.execute(animal.getProprietario())
                 : null;
-    }
+    }   
    
-    private Optional<Cliente> getProprietarioAnimal(Integer id) {
-        if(id != null) {
-            return clienteRepository.findById(id);
-        }
-        return Optional.empty();
-    }
 }

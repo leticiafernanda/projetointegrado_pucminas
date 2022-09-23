@@ -1,26 +1,27 @@
 package com.aplication.petcenter.service.impl;
 
-import com.aplication.petcenter.domain.dto.AnimalDTO;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
 import com.aplication.petcenter.domain.dto.AnimalBasicDTO;
+import com.aplication.petcenter.domain.dto.AnimalDTO;
 import com.aplication.petcenter.domain.entity.Animal;
 import com.aplication.petcenter.domain.mapper.MapperAnimalDTO;
 import com.aplication.petcenter.repository.AnimalRepository;
-import com.aplication.petcenter.repository.ClienteRepository;
 import com.aplication.petcenter.service.AnimalService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.var;
-import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
 public class AnimalServiceImpl implements AnimalService {
 
-    private final ClienteRepository clienteRepository;
     private final AnimalRepository animalRepository;
     private final MapperAnimalDTO mapperAnimalDTO;
 

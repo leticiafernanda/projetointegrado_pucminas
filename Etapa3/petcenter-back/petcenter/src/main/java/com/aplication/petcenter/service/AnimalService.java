@@ -1,10 +1,9 @@
 package com.aplication.petcenter.service;
 
-import com.aplication.petcenter.domain.dto.AnimalDTO;
-import com.aplication.petcenter.domain.dto.AnimalBasicDTO;
-import com.aplication.petcenter.domain.entity.Animal;
-
 import java.util.List;
+
+import com.aplication.petcenter.domain.dto.AnimalBasicDTO;
+import com.aplication.petcenter.domain.dto.AnimalDTO;
 
 public interface AnimalService {
     List<AnimalDTO> findAnimalList();

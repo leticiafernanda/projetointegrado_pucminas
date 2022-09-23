@@ -15,7 +15,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ConsultaDTO implements Serializable {
-    private  Integer id;
+
+	private static final long serialVersionUID = -4373598965345612757L;
+	
+	private  Integer id;
     private  Date data;
     private  Time horario;
     private  List<ServicosDTO> servicos;

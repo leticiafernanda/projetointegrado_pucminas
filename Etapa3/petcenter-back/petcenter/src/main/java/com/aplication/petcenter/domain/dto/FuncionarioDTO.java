@@ -13,7 +13,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FuncionarioDTO implements Serializable {
-    private  Integer id;
+   
+	private static final long serialVersionUID = 2042987991186393760L;
+	
+	private  Integer id;
     private  String nome;
     private  String endereco;
     private  String telefoneCelular;

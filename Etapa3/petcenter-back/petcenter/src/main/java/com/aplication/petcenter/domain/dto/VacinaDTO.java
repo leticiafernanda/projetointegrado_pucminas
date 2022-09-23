@@ -14,7 +14,10 @@ import java.util.Date;
 @NoArgsConstructor
 public class VacinaDTO implements Serializable {
 
-    private  Integer id;
+
+	private static final long serialVersionUID = -3744166914232250061L;
+	
+	private  Integer id;
     private  String nome;
     private  Date validade;
     private  Date fabricacao;

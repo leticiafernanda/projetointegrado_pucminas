@@ -13,7 +13,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsuarioDTO implements Serializable {
-    private  Integer id;
+ 
+	private static final long serialVersionUID = 7351643912483394438L;
+	
+	private  Integer id;
     private  String email;
     private  String senha;
     private  TipoPermissão tipo;

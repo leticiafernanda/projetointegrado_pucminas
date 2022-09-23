@@ -13,7 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ServicosDTO implements Serializable {
-    private  Integer id;
+    
+	private static final long serialVersionUID = -1658668030771958917L;
+	
+	private  Integer id;
     private  String descricao;
     private  Double valor;
     private  List<VacinaDTO> vacinas;

@@ -1,14 +1,23 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
-import com.aplication.petcenter.domain.dto.*;
-import com.aplication.petcenter.domain.entity.Consulta;
-import com.aplication.petcenter.domain.mapper.*;
-import lombok.RequiredArgsConstructor;
-import lombok.var;
-import org.springframework.stereotype.Component;
-
 import java.util.Collections;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.aplication.petcenter.domain.dto.AnimalDTO;
+import com.aplication.petcenter.domain.dto.ClienteDTO;
+import com.aplication.petcenter.domain.dto.ConsultaDTO;
+import com.aplication.petcenter.domain.dto.MedicoDTO;
+import com.aplication.petcenter.domain.dto.ServicosDTO;
+import com.aplication.petcenter.domain.entity.Consulta;
+import com.aplication.petcenter.domain.mapper.MapperAnimalDTO;
+import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
+import com.aplication.petcenter.domain.mapper.MapperConsultaDTO;
+import com.aplication.petcenter.domain.mapper.MapperMedicoDTO;
+
+import lombok.RequiredArgsConstructor;
+import lombok.var;
 
 @Component
 @RequiredArgsConstructor
@@ -16,7 +25,6 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
 
     private final MapperClienteDTO mapperClienteDTO;
     private final MapperAnimalDTO mapperAnimalDTO;
-    private final MapperServicosDTO mapperServicoDTO;
     private final MapperMedicoDTO mapperMedicoDTO;
 
     @Override

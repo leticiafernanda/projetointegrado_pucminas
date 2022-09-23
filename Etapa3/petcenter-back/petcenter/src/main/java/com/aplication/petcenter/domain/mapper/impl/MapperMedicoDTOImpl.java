@@ -1,17 +1,17 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import com.aplication.petcenter.domain.dto.MedicoDTO;
 import com.aplication.petcenter.domain.entity.Medico;
-import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
 import com.aplication.petcenter.domain.mapper.MapperMedicoDTO;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 public class MapperMedicoDTOImpl implements MapperMedicoDTO {
 
-    private final MapperClienteDTO mapperClienteDTO;
 
     @Override
       public MedicoDTO execute(Medico medico) {

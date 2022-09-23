@@ -13,7 +13,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class AdministradorDTO implements Serializable {
 
-    private  Integer id;
+	private static final long serialVersionUID = 2246087060664442945L;
+	
+	private  Integer id;
     private  String nome;
     private  String telefoneCelular;
     private  String telefoneCasa;

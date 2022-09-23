@@ -13,7 +13,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClienteDTO implements Serializable {
-    private Integer id;
+  
+	private static final long serialVersionUID = 5989064238763060892L;
+	
+	private Integer id;
     private String nome;
     private String endereco;
     private String telefoneCelular;

@@ -13,7 +13,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MedicoDTO implements Serializable {
-    private  Integer id;
+  
+	private static final long serialVersionUID = 7706219062825119429L;
+	
+	private  Integer id;
     private  String nome;
     private  String endereco;
     private  String telefoneCelular;

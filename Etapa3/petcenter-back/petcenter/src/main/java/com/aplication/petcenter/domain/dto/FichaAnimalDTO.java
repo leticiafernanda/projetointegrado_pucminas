@@ -13,7 +13,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FichaAnimalDTO implements Serializable {
-    private  Integer id;
+
+	private static final long serialVersionUID = -752372378403144023L;
+	
+	private  Integer id;
     private ClienteDTO proprietario;
     private AnimalDTO animal;
     private MedicoDTO medico;
