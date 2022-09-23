@@ -15,4 +15,8 @@ export class HomeComponent implements OnInit {
   handleClickVisualizarConsulta(){
     this.router.navigate([`/visualizar-consulta`])
   }
+  handleClickCadastrarAnimal(){
+    this.router.navigate([`/animal/cadastrar-animal`])
+
+  }
 }
