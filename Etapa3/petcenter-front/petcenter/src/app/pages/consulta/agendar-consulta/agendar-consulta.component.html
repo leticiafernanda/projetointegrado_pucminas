@@ -4,10 +4,82 @@
     <div>
         <h6 class="agendamento"> Agendar Consultas</h6>
     </div>
-    <form class="form" [formGroup]="scheduleForm">
+    <form class="form">
         <div class="form-group">
             <div class="select-form">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Nome do Animal</mat-label>
+                    <mat-select>
+                        <mat-option>
+
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Nome do Proprietário do Animal</mat-label>
+                    <mat-select>
+                        <mat-option>
+
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-position" appearance="fill">
+                    <mat-label>Data</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Horas</mat-label>
+                    <input name="horas" type="time" matInput>
+                </mat-form-field>
+
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Veterinário(a)</mat-label>
+                    <mat-select>
+                        <mat-option>
+
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-position" appearance="fill">
+                    <mat-label>Telefone</mat-label>
+                    <input name="telefone" matInput>
+                </mat-form-field>
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Celular</mat-label>
+                    <input name="celular" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input name="email" matInput>
+                </mat-form-field>
             </div>
         </div>
     </form>
+    <div class="buttons-actions">
+        <button mat-raised-button color="primary">Salvar</button>
+    </div>
+
 </mat-card>

@@ -1,16 +1,21 @@
 package com.aplication.petcenter.service.impl;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.aplication.petcenter.domain.dto.AgendamentoBasicDTO;
 import com.aplication.petcenter.domain.dto.AgendamentoDTO;
 import com.aplication.petcenter.domain.entity.Agendamento;
 import com.aplication.petcenter.domain.mapper.MapperAgendamentoDTO;
 import com.aplication.petcenter.repository.AgendamentoRepository;
 import com.aplication.petcenter.service.AgendamentoService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.util.List;
-import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
+import lombok.var;
 
 @Service
 @RequiredArgsConstructor
@@ -27,7 +32,8 @@ public class AgendamentoServiceImpl implements AgendamentoService {
     }
 
     @Transactional
-    public void save(Agendamento agendamento) {
-        agendamentoRepository.save(agendamento);
+    public void save(AgendamentoBasicDTO agendamento) {
+    	var createAgendamento = mapperAgendamentoDTO.execute(agendamento);
+        agendamentoRepository.save(createAgendamento);
     }
 }

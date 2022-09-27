@@ -11,6 +11,7 @@ import { PagesModule } from './pages/pages.module';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     HttpClientModule,
     NgHttpLoaderModule.forRoot()
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,12 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
+import com.aplication.petcenter.domain.dto.AgendamentoBasicDTO;
 import com.aplication.petcenter.domain.dto.AgendamentoDTO;
 import com.aplication.petcenter.domain.dto.ClienteDTO;
 import com.aplication.petcenter.domain.dto.MedicoDTO;
 import com.aplication.petcenter.domain.entity.Agendamento;
+import com.aplication.petcenter.domain.entity.Cliente;
+import com.aplication.petcenter.domain.entity.Medico;
 import com.aplication.petcenter.domain.mapper.MapperAgendamentoDTO;
 import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
 import com.aplication.petcenter.domain.mapper.MapperMedicoDTO;
@@ -30,8 +33,31 @@ public class MapperAgendamentoDTOImpl implements MapperAgendamentoDTO {
                 .email(agendamento.getEmail())
                 .build();
     }
+    @Override
+	public Agendamento execute(AgendamentoBasicDTO agendamento) {
+    	 return Agendamento.builder()
+                 .id(agendamento.getId())
+                 .proprietario(getProprietarioId(agendamento.getIdProprietario()))
+                 .medico(getMedicoId (agendamento.getIdMedico()))
+                 .data(agendamento.getData())
+                 .hora(agendamento.getHora())
+                 .telefoneCasa(agendamento.getTelefoneCasa())
+                 .telefoneCelular(agendamento.getTelefoneCelular())
+                 .email(agendamento.getEmail())
+                 .build();
+	}
 
-    private ClienteDTO getProprietario(Agendamento agendamento) {
+    private Medico getMedicoId(Integer idMedico) {
+    	return (Medico) Medico.builder()
+				.id(idMedico)
+				.build();
+	}
+	private Cliente getProprietarioId(Integer idProprietario) {
+    	return Cliente.builder()
+				.id(idProprietario)
+				.build();
+	}
+	private ClienteDTO getProprietario(Agendamento agendamento) {
         return agendamento.getProprietario() != null
                 ? mapperClienteDTO.execute(agendamento.getProprietario())
                 : null;
@@ -42,5 +68,4 @@ public class MapperAgendamentoDTOImpl implements MapperAgendamentoDTO {
                 ? mapperMedicoDTO.execute(agendamento.getMedico())
                 : null;
     }
-
 }
