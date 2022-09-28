@@ -3,6 +3,7 @@ package com.aplication.petcenter.domain.mapper.impl;
 import org.springframework.stereotype.Component;
 
 import com.aplication.petcenter.domain.dto.MedicoDTO;
+import com.aplication.petcenter.domain.entity.Funcionario;
 import com.aplication.petcenter.domain.entity.Medico;
 import com.aplication.petcenter.domain.mapper.MapperMedicoDTO;
 
@@ -26,4 +27,5 @@ public class MapperMedicoDTOImpl implements MapperMedicoDTO {
                 .CRMV(medico.getCRMV())
                 .build();
     }
+  
 }

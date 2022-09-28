@@ -5,6 +5,6 @@ import com.aplication.petcenter.domain.entity.Funcionario;
 
 public interface MapperFuncionarioDTO {
 
-    FuncionarioDTO execute(Funcionario fuuncionario);
+    FuncionarioDTO execute(Funcionario funcionario);
 
 }

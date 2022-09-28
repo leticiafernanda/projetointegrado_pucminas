@@ -1,25 +1,27 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import com.aplication.petcenter.domain.dto.AgendamentoBasicDTO;
 import com.aplication.petcenter.domain.dto.AgendamentoDTO;
 import com.aplication.petcenter.domain.dto.ClienteDTO;
 import com.aplication.petcenter.domain.dto.MedicoDTO;
 import com.aplication.petcenter.domain.entity.Agendamento;
 import com.aplication.petcenter.domain.entity.Cliente;
+import com.aplication.petcenter.domain.entity.Funcionario;
 import com.aplication.petcenter.domain.entity.Medico;
 import com.aplication.petcenter.domain.mapper.MapperAgendamentoDTO;
 import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
-import com.aplication.petcenter.domain.mapper.MapperMedicoDTO;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 public class MapperAgendamentoDTOImpl implements MapperAgendamentoDTO {
 
     private final MapperClienteDTO mapperClienteDTO;
-    private final MapperMedicoDTO mapperMedicoDTO;
-
+  
+    
     @Override
       public AgendamentoDTO execute(Agendamento agendamento) {
         return AgendamentoDTO.builder()
@@ -38,7 +40,7 @@ public class MapperAgendamentoDTOImpl implements MapperAgendamentoDTO {
     	 return Agendamento.builder()
                  .id(agendamento.getId())
                  .proprietario(getProprietarioId(agendamento.getIdProprietario()))
-                 .medico(getMedicoId (agendamento.getIdMedico()))
+                 .medico(getMedicoId (agendamento))
                  .data(agendamento.getData())
                  .hora(agendamento.getHora())
                  .telefoneCasa(agendamento.getTelefoneCasa())
@@ -47,9 +49,10 @@ public class MapperAgendamentoDTOImpl implements MapperAgendamentoDTO {
                  .build();
 	}
 
-    private Medico getMedicoId(Integer idMedico) {
-    	return (Medico) Medico.builder()
-				.id(idMedico)
+
+	private Funcionario getMedicoId(AgendamentoBasicDTO agendamento) {
+		return Medico.builder()
+				.id(agendamento.getIdMedico())
 				.build();
 	}
 	private Cliente getProprietarioId(Integer idProprietario) {
@@ -64,8 +67,13 @@ public class MapperAgendamentoDTOImpl implements MapperAgendamentoDTO {
     }
 
     private MedicoDTO getMedico(Agendamento agendamento) {
-        return agendamento.getProprietario() != null
-                ? mapperMedicoDTO.execute(agendamento.getMedico())
-                : null;
+    	return MedicoDTO.builder()
+				.id(agendamento.getMedico().getId())
+				.nome(agendamento.getMedico().getNome())
+				.endereco(agendamento.getMedico().getEndereco())
+				.telefoneCasa(agendamento.getMedico().getTelefoneCasa())
+				.telefoneCelular(agendamento.getMedico().getTelefoneCelular())
+				
+				.build();
     }
 }

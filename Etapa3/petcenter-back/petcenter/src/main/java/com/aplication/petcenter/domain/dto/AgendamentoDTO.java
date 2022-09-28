@@ -1,13 +1,13 @@
 package com.aplication.petcenter.domain.dto;
 
+import java.io.Serializable;
+import java.time.LocalTime;
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-import java.sql.Time;
-import java.util.Date;
 
 @Data
 @Builder
@@ -20,7 +20,7 @@ public class AgendamentoDTO implements Serializable {
     private ClienteDTO proprietario;
     private MedicoDTO medico;
     private  Date data;
-    private  Time hora;
+    private  LocalTime hora;
     private  String telefoneCelular;
     private  String telefoneCasa;
     private  String email;

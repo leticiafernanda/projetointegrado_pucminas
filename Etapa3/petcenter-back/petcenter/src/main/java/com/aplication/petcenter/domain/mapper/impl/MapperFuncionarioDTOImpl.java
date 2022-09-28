@@ -1,6 +1,7 @@
 package com.aplication.petcenter.domain.mapper.impl;
 
 import com.aplication.petcenter.domain.dto.FuncionarioDTO;
+import com.aplication.petcenter.domain.dto.MedicoDTO;
 import com.aplication.petcenter.domain.entity.Funcionario;
 import com.aplication.petcenter.domain.mapper.MapperFuncionarioDTO;
 import lombok.RequiredArgsConstructor;

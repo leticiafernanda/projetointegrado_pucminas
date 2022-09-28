@@ -6,5 +6,5 @@ import com.aplication.petcenter.domain.entity.Medico;
 public interface MapperMedicoDTO {
 
     MedicoDTO execute(Medico medico);
-
+    
 }

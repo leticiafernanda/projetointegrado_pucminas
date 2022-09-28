@@ -4,14 +4,14 @@
     <div>
         <h6 class="agendamento"> Agendar Consultas</h6>
     </div>
-    <form class="form">
+    <form class="form" [formGroup]="scheduleForm">
         <div class="form-group">
             <div class="select-form">
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Nome do Animal</mat-label>
                     <mat-select>
-                        <mat-option>
-
+                        <mat-option *ngFor="let animal of nomeAnimalList" [value]="animal.id">
+                            {{animal.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -21,9 +21,9 @@
             <div class="select-form">
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Nome do Proprietário do Animal</mat-label>
-                    <mat-select>
-                        <mat-option>
-
+                    <mat-select name="idProprietario" formControlName="idProprietario">
+                        <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario.id">
+                            {{proprietario.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -34,7 +34,7 @@
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
                     <mat-label>Data</mat-label>
-                    <input matInput [matDatepicker]="picker">
+                    <input name="data" [matDatepicker]="picker" formControlName="data" matInput>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -42,14 +42,14 @@
 
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Horas</mat-label>
-                    <input name="horas" type="time" matInput>
+                    <input name="hora" type="time" formControlName="hora" matInput>
                 </mat-form-field>
 
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Veterinário(a)</mat-label>
-                    <mat-select>
-                        <mat-option>
-
+                    <mat-select name="idMedico" formControlName="idMedico">
+                        <mat-option *ngFor="let medico of medicoList" [value]="medico.id">
+                            {{medico.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -60,11 +60,11 @@
             <div class="select-form">
                 <mat-form-field class="full-position" appearance="fill">
                     <mat-label>Telefone</mat-label>
-                    <input name="telefone" matInput>
+                    <input name="telefone" formControlName="telefoneCasa" matInput>
                 </mat-form-field>
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Celular</mat-label>
-                    <input name="celular" matInput>
+                    <input name="celular" formControlName="telefoneCelular" matInput>
                 </mat-form-field>
             </div>
         </div>
@@ -73,13 +73,13 @@
             <div class="select-form">
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Email</mat-label>
-                    <input name="email" matInput>
+                    <input name="email" formControlName="email" matInput>
                 </mat-form-field>
             </div>
         </div>
     </form>
     <div class="buttons-actions">
-        <button mat-raised-button color="primary">Salvar</button>
+        <button mat-raised-button color="primary" (click)="agendamento()">Salvar</button>
     </div>
 
 </mat-card>

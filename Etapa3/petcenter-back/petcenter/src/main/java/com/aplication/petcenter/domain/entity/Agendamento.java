@@ -1,14 +1,21 @@
 package com.aplication.petcenter.domain.entity;
 
+import java.io.Serializable;
+import java.time.LocalTime;
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Time;
-import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -30,18 +37,18 @@ public class Agendamento implements Serializable {
 
     @OneToOne
     @JoinColumn(name="id_medico")
-    private Medico medico;
+    private Funcionario medico;
 
     @Column(name = "data")
     private Date data;
 
     @Column(name = "hora")
-    private Time hora;
+    private LocalTime hora;
 
-    @Column(name = "telefoneCelular")
+    @Column(name = "telefone_celular")
     private String telefoneCelular;
 
-    @Column(name = "telefoneCasa")
+    @Column(name = "telefone_casa")
     private String telefoneCasa;
 
     @Column(name = "email", unique = true)
