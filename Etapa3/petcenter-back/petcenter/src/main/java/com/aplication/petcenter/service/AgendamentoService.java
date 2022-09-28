@@ -9,4 +9,6 @@ public interface AgendamentoService {
     List<AgendamentoDTO> findAgendamentoList();
 
     void save(AgendamentoBasicDTO agendamento);
+
+	void deleteById(Integer consultaId);
 }

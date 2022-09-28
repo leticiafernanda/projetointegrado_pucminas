@@ -36,4 +36,9 @@ public class AgendamentoServiceImpl implements AgendamentoService {
     	var createAgendamento = mapperAgendamentoDTO.execute(agendamento);
         agendamentoRepository.save(createAgendamento);
     }
+	
+	public void deleteById(Integer consultaId) {
+		agendamentoRepository.deleteById(consultaId);		
+	}
+
 }
