@@ -1,0 +1,52 @@
+<navbar-menu></navbar-menu>
+
+<mat-card class="mat-elevation-z0 container">
+    <div>
+        <h6 class="visualizar-consultas">Cancelar Consultas</h6>
+    </div>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="datasource">
+            <ng-container matColumnDef="dataConsulta">
+                <th mat-header-cell *matHeaderCellDef> Data da Consulta </th>
+                <td mat-cell *matCellDef="let row"> {{row.data | date: 'd MMM y'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="medicoNome">
+                <th mat-header-cell *matHeaderCellDef> Médico(a) Veterinário (a) </th>
+                <td mat-cell *matCellDef="let row"> {{row.medico.nome}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="pacienteNome">
+                <th mat-header-cell *matHeaderCellDef> Paciente </th>
+                <td mat-cell *matCellDef="let row"> {{row.animal.nome}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="proprietarioNome">
+                <th mat-header-cell *matHeaderCellDef> Proprietário </th>
+                <td mat-cell *matCellDef="let row"> {{row.cliente.nome}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status da Consulta </th>
+                <td mat-cell *matCellDef="let row"> {{row.statusConsulta}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="icone">
+                <th mat-header-cell *matHeaderCellDef>Deseja cancelar a consulta?</th>
+                <td mat-cell *matCellDef="let row">
+                    <span><mat-icon matTooltip="Cancelar consulta" (click)="cancelarConsulta(row.id)"
+                      style="color: rgb(243, 156, 18)"
+                      >cancel</mat-icon></span>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 20 , 30]" aria-label="Select page of consult"></mat-paginator>
+    </div>
+
+</mat-card>

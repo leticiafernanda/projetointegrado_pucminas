@@ -56,7 +56,7 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
         },
         {
           displayName: 'Cancelar',
-          route: ''
+          route: '/consulta/cancelar-consulta'
         }
       ]
     },
