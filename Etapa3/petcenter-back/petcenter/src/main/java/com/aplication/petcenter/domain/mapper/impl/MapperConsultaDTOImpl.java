@@ -19,7 +19,6 @@ import com.aplication.petcenter.domain.entity.Medico;
 import com.aplication.petcenter.domain.mapper.MapperAnimalDTO;
 import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
 import com.aplication.petcenter.domain.mapper.MapperConsultaDTO;
-import com.aplication.petcenter.domain.mapper.MapperMedicoDTO;
 
 import lombok.RequiredArgsConstructor;
 import lombok.var;
@@ -62,6 +61,8 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
 				 .build();
 		 
 	}
+	
+
     private Funcionario medicoId(Integer idMedico) {
     	return Medico.builder()
 				.id(idMedico)
@@ -107,5 +108,7 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
 
         return Collections.singletonList(consultas);
     }
+
+	
 
 }

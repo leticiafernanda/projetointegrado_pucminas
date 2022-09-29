@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { ConsultaData } from 'src/app/models/consulta.interface';
 import { ConsultaService } from 'src/app/services/consulta.service';
 
@@ -19,7 +20,8 @@ export class CancelarConsultaComponent implements OnInit  {
   datasource: any;
 
   constructor(
-    private consultaService: ConsultaService
+    private consultaService: ConsultaService,
+    private router: Router
   ) {
 
   }
@@ -34,7 +36,11 @@ export class CancelarConsultaComponent implements OnInit  {
       })
   }
   cancelarConsulta(id:any){
-
+    this.consultaService.putConsulta(id)
+    .subscribe(()=>{
+     // this.dialog.open(ModalSucessoComponent);
+     this.router.navigate(["/home"]);
+    })
   }
 }
 

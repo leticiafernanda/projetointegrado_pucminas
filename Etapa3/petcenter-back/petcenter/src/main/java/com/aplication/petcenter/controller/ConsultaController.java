@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aplication.petcenter.domain.dto.ConsultaBasicDTO;
 import com.aplication.petcenter.domain.dto.ConsultaDTO;
 import com.aplication.petcenter.domain.entity.Consulta;
 import com.aplication.petcenter.service.ConsultaService;
@@ -41,5 +44,9 @@ public class ConsultaController {
         consultaService.save(consulta);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
+    @PutMapping("/{id_consulta}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<Consulta> updateConsulta(@PathVariable(value = "id_consulta") Integer consultaId) {
+        return ResponseEntity.ok(consultaService.updateById(consultaId));
+    }
 }

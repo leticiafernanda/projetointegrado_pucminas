@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.aplication.petcenter.domain.dto.AgendamentoBasicDTO;
 import com.aplication.petcenter.domain.dto.AgendamentoDTO;
 import com.aplication.petcenter.domain.entity.Agendamento;
+import com.aplication.petcenter.domain.entity.Consulta;
 import com.aplication.petcenter.domain.mapper.MapperAgendamentoDTO;
 import com.aplication.petcenter.domain.mapper.MapperConsultaDTO;
 import com.aplication.petcenter.repository.AgendamentoRepository;
@@ -38,10 +39,14 @@ public class AgendamentoServiceImpl implements AgendamentoService {
     public void save(AgendamentoBasicDTO agendamento) {
     	var createAgendamento = mapperAgendamentoDTO.execute(agendamento);
     	var createConsulta = mapperConsultaDTO.execute(agendamento);
-    	consultaRepository.save(createConsulta);
-        agendamentoRepository.save(createAgendamento);
+    	this.createdConsulta(createConsulta);
+        agendamentoRepository.save(createAgendamento);    	
     }
 	
+	private void createdConsulta(Consulta createConsulta) {
+		consultaRepository.save(createConsulta);
+		
+	}
 	public void deleteById(Integer consultaId) {
 		agendamentoRepository.deleteById(consultaId);		
 	}
