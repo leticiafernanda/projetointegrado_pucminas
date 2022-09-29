@@ -18,6 +18,7 @@ public class AgendamentoBasicDTO implements Serializable {
 	private static final long serialVersionUID = 8493252539831607415L;
 	
 	private  Integer id;
+    private  Integer idAnimal;
     private  Integer idProprietario;
     private  Integer idMedico;
     private  Date data;

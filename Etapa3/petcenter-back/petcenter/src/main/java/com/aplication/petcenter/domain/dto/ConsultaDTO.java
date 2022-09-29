@@ -1,14 +1,14 @@
 package com.aplication.petcenter.domain.dto;
 
+import java.io.Serializable;
+import java.time.LocalTime;
+import java.util.Date;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-import java.sql.Time;
-import java.util.Date;
-import java.util.List;
 
 @Data
 @Builder
@@ -20,7 +20,7 @@ public class ConsultaDTO implements Serializable {
 	
 	private  Integer id;
     private  Date data;
-    private  Time horario;
+    private  LocalTime horario;
     private  List<ServicosDTO> servicos;
     private  String pedido;
     private  Double custo;

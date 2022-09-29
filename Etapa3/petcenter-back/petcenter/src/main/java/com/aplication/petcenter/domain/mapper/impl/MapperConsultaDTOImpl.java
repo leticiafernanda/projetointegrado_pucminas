@@ -5,12 +5,17 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.aplication.petcenter.domain.dto.AgendamentoBasicDTO;
 import com.aplication.petcenter.domain.dto.AnimalDTO;
 import com.aplication.petcenter.domain.dto.ClienteDTO;
 import com.aplication.petcenter.domain.dto.ConsultaDTO;
 import com.aplication.petcenter.domain.dto.MedicoDTO;
 import com.aplication.petcenter.domain.dto.ServicosDTO;
+import com.aplication.petcenter.domain.entity.Animal;
+import com.aplication.petcenter.domain.entity.Cliente;
 import com.aplication.petcenter.domain.entity.Consulta;
+import com.aplication.petcenter.domain.entity.Funcionario;
+import com.aplication.petcenter.domain.entity.Medico;
 import com.aplication.petcenter.domain.mapper.MapperAnimalDTO;
 import com.aplication.petcenter.domain.mapper.MapperClienteDTO;
 import com.aplication.petcenter.domain.mapper.MapperConsultaDTO;
@@ -25,7 +30,6 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
 
     private final MapperClienteDTO mapperClienteDTO;
     private final MapperAnimalDTO mapperAnimalDTO;
-    private final MapperMedicoDTO mapperMedicoDTO;
 
     @Override
     public ConsultaDTO execute(Consulta consulta) {
@@ -43,7 +47,40 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
                 .build();
 
     }
-    private ClienteDTO getProprietario(Consulta consulta) {
+    
+	public Consulta execute(AgendamentoBasicDTO agendamento) {
+		 return Consulta.builder()
+				 .id(agendamento.getId())
+				 .data(agendamento.getData())
+				 .horario(agendamento.getHora())
+				 .cliente(clienteId(agendamento.getIdProprietario()))
+				 .animal(animalId(agendamento.getIdAnimal()))
+				 .medico(medicoId(agendamento.getIdMedico()))
+				 .statusConsulta("Marcado")
+				 .custo(100.00)
+				 .pedido("Indefinido")
+				 .build();
+		 
+	}
+    private Funcionario medicoId(Integer idMedico) {
+    	return Medico.builder()
+				.id(idMedico)
+				.build();
+	}
+
+	private Animal animalId(Integer idAnimal) {
+		return Animal.builder()
+				.id(idAnimal)
+				.build();
+	}
+
+	private Cliente clienteId(Integer idProprietario) {
+		return Cliente.builder()
+				.id(idProprietario)
+				.build();
+	}
+
+	private ClienteDTO getProprietario(Consulta consulta) {
         return consulta.getCliente() != null
                 ? mapperClienteDTO.execute(consulta.getCliente())
                 : null;
@@ -54,9 +91,13 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
                 : null;
     }
     private MedicoDTO getMedico(Consulta consulta) {
-        return consulta.getMedico() != null
-                ? mapperMedicoDTO.execute(consulta.getMedico())
-                : null;
+    	return MedicoDTO.builder()
+				.id(consulta.getMedico().getId())
+				.nome(consulta.getMedico().getNome())
+				.endereco(consulta.getMedico().getEndereco())
+				.telefoneCasa(consulta.getMedico().getTelefoneCasa())
+				.telefoneCelular(consulta.getMedico().getTelefoneCelular())				
+				.build();
     }
 
     private List<ServicosDTO> getServicos(Consulta consulta) {
@@ -66,4 +107,5 @@ public class MapperConsultaDTOImpl implements MapperConsultaDTO {
 
         return Collections.singletonList(consultas);
     }
+
 }
