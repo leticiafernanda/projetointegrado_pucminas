@@ -13,6 +13,6 @@ public interface ConsultaService {
 
     void save(Consulta consulta);
     
-    Consulta updateById(Integer consultaId);
+    void updateById(Integer consultaId);
 
 }

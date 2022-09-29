@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.aplication.petcenter.domain.dto.ConsultaDTO;
 import com.aplication.petcenter.domain.entity.Consulta;
@@ -12,6 +13,7 @@ import com.aplication.petcenter.repository.ConsultaRepository;
 import com.aplication.petcenter.service.ConsultaService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 
 @Service
 @RequiredArgsConstructor
@@ -36,13 +38,15 @@ public class ConsultaServiceImpl implements ConsultaService {
         consultaRepository.save(consulta);
     }
 
-	@Override
-	public Consulta updateById(Integer consultaId) {
-			Consulta currentConsulta = consultaRepository.findById(consultaId).orElse(null);
+	@Transactional
+	public void updateById(Integer consultaId) {
+		 var currentConsulta = this.findConsultaById(consultaId);	
 			currentConsulta.setId(consultaId);
 	        currentConsulta.setStatusConsulta("Cancelado");
-	        consultaRepository.save(currentConsulta);
-	        return currentConsulta;
-	   	
+	        consultaRepository.save(currentConsulta);	   	
+	}
+
+	private Consulta findConsultaById(Integer consultaId) {
+		return  consultaRepository.findById(consultaId).orElse(null);
 	}
 }

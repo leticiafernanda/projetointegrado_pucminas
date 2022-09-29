@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aplication.petcenter.domain.dto.ConsultaBasicDTO;
 import com.aplication.petcenter.domain.dto.ConsultaDTO;
 import com.aplication.petcenter.domain.entity.Consulta;
 import com.aplication.petcenter.service.ConsultaService;
@@ -45,8 +44,8 @@ public class ConsultaController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
     @PutMapping("/{id_consulta}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Consulta> updateConsulta(@PathVariable(value = "id_consulta") Integer consultaId) {
-        return ResponseEntity.ok(consultaService.updateById(consultaId));
+    public ResponseEntity<Void> updateConsulta(@PathVariable(value = "id_consulta") Integer consultaId) {
+       consultaService.updateById(consultaId);
+    	return ResponseEntity.ok().build();
     }
 }

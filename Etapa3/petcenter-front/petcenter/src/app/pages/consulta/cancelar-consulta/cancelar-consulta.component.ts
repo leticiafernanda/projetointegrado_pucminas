@@ -39,7 +39,7 @@ export class CancelarConsultaComponent implements OnInit  {
     this.consultaService.putConsulta(id)
     .subscribe(()=>{
      // this.dialog.open(ModalSucessoComponent);
-     this.router.navigate(["/home"]);
+     window.location.reload();
     })
   }
 }
