@@ -52,6 +52,7 @@ getMedico(){
   createScheduleForm(agendamento: Agendamento) {
     this.scheduleForm = new FormGroup({
       id:new FormControl(agendamento.id, [Validators.required]),
+      idAnimal: new FormControl(agendamento.idAnimal),
       idProprietario: new FormControl(agendamento.idProprietario, [Validators.required]),
       idMedico: new FormControl(agendamento.idMedico, [Validators.required]),
       data: new FormControl(agendamento.data, [Validators.required]),
@@ -75,6 +76,7 @@ getMedico(){
 buildAgendamento() {
   let agendamento = new Agendamento();
   agendamento.id = Math.floor(Math.random() * 100) + 1;
+  agendamento.idAnimal = this.scheduleForm.value.idAnimal;
   agendamento.idProprietario = this.scheduleForm.value.idProprietario;
   agendamento.idMedico = this.scheduleForm.value.idMedico;
   agendamento.data = this.scheduleForm.value.data;

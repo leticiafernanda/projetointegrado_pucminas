@@ -1,7 +1,8 @@
 import { Time } from "@angular/common";
 
 export class Agendamento {
-      id!: number;
+       id!: number;
+       idAnimal!:number;
        idProprietario!: number;
        idMedico!: number;
        data!: Date;

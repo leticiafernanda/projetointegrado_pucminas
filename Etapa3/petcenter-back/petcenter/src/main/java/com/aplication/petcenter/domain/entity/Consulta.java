@@ -1,15 +1,22 @@
 package com.aplication.petcenter.domain.entity;
 
+import java.io.Serializable;
+import java.time.LocalTime;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Time;
-import java.util.Date;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -29,16 +36,16 @@ public class Consulta implements Serializable {
     private Date data;
 
     @Column(name = "horario", nullable = false)
-    private Time horario;
+    private LocalTime horario;
 
     @ManyToMany
-    @JoinColumn(name = "descricao", nullable = false)
+    @JoinColumn(name = "descricao")
     private List<Servicos> servicos;
 
-    @Column(name = "pedido", nullable = false)
+    @Column(name = "pedido")
     private String pedido;
 
-    @Column(name = "custo", nullable = false)
+    @Column(name = "custo")
     private Double custo;
 
     @OneToOne
@@ -51,7 +58,7 @@ public class Consulta implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "medico", nullable = false)
-    private Medico medico;
+    private Funcionario medico;
 
     @Column(name = "status", nullable = false)
     private String statusConsulta;

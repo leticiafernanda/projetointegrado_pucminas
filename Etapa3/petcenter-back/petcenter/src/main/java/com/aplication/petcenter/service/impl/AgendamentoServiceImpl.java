@@ -11,7 +11,9 @@ import com.aplication.petcenter.domain.dto.AgendamentoBasicDTO;
 import com.aplication.petcenter.domain.dto.AgendamentoDTO;
 import com.aplication.petcenter.domain.entity.Agendamento;
 import com.aplication.petcenter.domain.mapper.MapperAgendamentoDTO;
+import com.aplication.petcenter.domain.mapper.MapperConsultaDTO;
 import com.aplication.petcenter.repository.AgendamentoRepository;
+import com.aplication.petcenter.repository.ConsultaRepository;
 import com.aplication.petcenter.service.AgendamentoService;
 
 import lombok.RequiredArgsConstructor;
@@ -23,17 +25,20 @@ import lombok.var;
 public class AgendamentoServiceImpl implements AgendamentoService {
 
     private final AgendamentoRepository agendamentoRepository;
+    private final ConsultaRepository consultaRepository;
     private final MapperAgendamentoDTO mapperAgendamentoDTO;
+    private final MapperConsultaDTO mapperConsultaDTO;
 
     @Override
     public List<AgendamentoDTO> findAgendamentoList() {
         List<Agendamento> agendamentos = agendamentoRepository.findAll();
         return agendamentos.stream().map(mapperAgendamentoDTO::execute).collect(Collectors.toList());
     }
-
     @Transactional
     public void save(AgendamentoBasicDTO agendamento) {
     	var createAgendamento = mapperAgendamentoDTO.execute(agendamento);
+    	var createConsulta = mapperConsultaDTO.execute(agendamento);
+    	consultaRepository.save(createConsulta);
         agendamentoRepository.save(createAgendamento);
     }
 	
