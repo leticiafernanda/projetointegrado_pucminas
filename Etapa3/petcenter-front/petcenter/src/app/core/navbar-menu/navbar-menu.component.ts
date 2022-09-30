@@ -4,6 +4,7 @@ import { Component, OnInit, OnDestroy, ChangeDetectorRef } from "@angular/core";
 import { Subscription, Observable } from "rxjs";
 import { MediaMatcher } from "@angular/cdk/layout";
 import { NavItem } from "./nav-item";
+import { UsuarioService } from "src/app/services/usuario.service";
 
 
 @Component({
@@ -108,11 +109,12 @@ mobileQuery: MediaQueryList;
 
 private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private usuarioService: UsuarioService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
 
   }
+
 
   ngOnInit() {}
 

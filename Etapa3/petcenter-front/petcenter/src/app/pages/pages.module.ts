@@ -17,6 +17,7 @@ import { ModalSucessoComponent } from "./animal/modal-sucesso/modal-sucesso.comp
 import { MatDialogModule } from "@angular/material/dialog";
 import { AgendarConsultaComponent } from './consulta/agendar-consulta/agendar-consulta.component';
 import { CancelarConsultaComponent } from "./consulta/cancelar-consulta/cancelar-consulta.component";
+import { DeslogarComponent } from "./deslogar/deslogar.component";
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CancelarConsultaComponent } from "./consulta/cancelar-consulta/cancelar
     EditarAnimalComponent,
     ExcluirAnimalComponent,
     AgendarConsultaComponent,
-    CancelarConsultaComponent
+    CancelarConsultaComponent,
+    DeslogarComponent
     ],
   imports: [
     CommonModule,

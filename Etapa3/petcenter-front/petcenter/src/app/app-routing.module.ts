@@ -9,18 +9,22 @@ import { EditarAnimalComponent } from './pages/animal/editar-animal/editar-anima
 import { ExcluirAnimalComponent } from './pages/animal/excluir-animal/excluir-animal.component';
 import { AgendarConsultaComponent } from './pages/consulta/agendar-consulta/agendar-consulta.component';
 import { CancelarConsultaComponent } from './pages/consulta/cancelar-consulta/cancelar-consulta.component';
+import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autenticado.guard';
+import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
+import { DeslogarComponent} from './pages/deslogar/deslogar.component';
 
 const routes: Routes = [
-{ path: "login", redirectTo: "" },
-{ path: "", component: LoginPageComponent },
-{ path: "home", component: HomeComponent, data: { title: "Home" } },
-{ path: "animal", component: AnimalComponent},
-{ path: 'animal/cadastrar-animal', component: CadastrarAnimalComponent},
-{ path: 'animal/editar-animal', component: EditarAnimalComponent},
-{ path: 'animal/excluir-animal', component: ExcluirAnimalComponent},
-{ path: 'consulta/visualizar-consulta', component: ConsultaComponent},
-{ path: 'consulta/agendar-consulta', component: AgendarConsultaComponent},
-{ path: 'consulta/cancelar-consulta',component: CancelarConsultaComponent}
+{ path: "login", redirectTo: "",canActivate: [UsuarioNaoAutenticadoGuard] },
+{ path: "", component: LoginPageComponent,canActivate: [UsuarioNaoAutenticadoGuard] },
+{ path: "home", component: HomeComponent, data: { title: "Home" },canActivate: [UsuarioAutenticadoGuard] },
+{ path: "animal", component: AnimalComponent,canActivate: [UsuarioAutenticadoGuard]},
+{ path: 'animal/cadastrar-animal', component: CadastrarAnimalComponent,canActivate: [UsuarioAutenticadoGuard]},
+{ path: 'animal/editar-animal', component: EditarAnimalComponent,canActivate: [UsuarioAutenticadoGuard]},
+{ path: 'animal/excluir-animal', component: ExcluirAnimalComponent,canActivate: [UsuarioAutenticadoGuard]},
+{ path: 'consulta/visualizar-consulta', component: ConsultaComponent,canActivate: [UsuarioAutenticadoGuard]},
+{ path: 'consulta/agendar-consulta', component: AgendarConsultaComponent,canActivate: [UsuarioAutenticadoGuard]},
+{ path: 'consulta/cancelar-consulta',component: CancelarConsultaComponent,canActivate: [UsuarioAutenticadoGuard]},
+{ path: 'desloga', component:DeslogarComponent},
 ];
 
 @NgModule({

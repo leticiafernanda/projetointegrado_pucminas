@@ -1,21 +1,24 @@
 <div class="signin-content">
     <mat-card>
         <mat-card-content>
-            <form (ngSubmit)="onSubmit()">
+            <form [formGroup]="formLogin">
                 <img mat-card-image src="../../../assets/pet.png" alt="logo">
                 <mat-form-field class="full-width-input" appearance="outline">
-                    <input matInput placeholder="Usuário">
-                    <!--  <mat-error *ngIf="isFieldInvalid('userName')">
-                        Informe um usuário válido!
-                    </mat-error>-->
+                    <input formControlName="email" placeholder="Email" matInput>
+                    <mat-error *ngIf="isFieldInvalid('email')">
+                        Informe um email válido!
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="full-width-input" appearance="outline">
-                    <input matInput type="password" placeholder="Senha">
-                    <!--<mat-error *ngIf="isFieldInvalid('userName')">
-                       Informe uma senha válida!
-                    </mat-error>-->
+                    <input type="password" formControlName="senha" placeholder="Senha" matInput>
+                    <mat-error *ngIf="isFieldInvalid('senha')">
+                        Informe uma senha válida!
+                    </mat-error>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit" (click)="handleClick()">Login</button>
+                <button mat-raised-button color="primary" type="submit" (click)="logar()">Login</button>
+                <div class="registro">
+                    <a routerLink="../register" class="btn btn-link">Cadastre-se aqui!</a>
+                </div>
             </form>
         </mat-card-content>
     </mat-card>
