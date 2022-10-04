@@ -13,10 +13,10 @@ public class MapperUsuarioDTOImpl implements MapperUsuarioDTO {
     public UsuarioDTO execute(Usuario usuario) {
 
         return UsuarioDTO.builder()
-                .id(usuario.getId())
+                //.id(usuario.getId())
                 .email(usuario.getEmail())
                 .senha(usuario.getSenha())
-                .tipo(usuario.getTipo())
+                //.tipo(usuario.getTipo())
                 .build();
     }
 }

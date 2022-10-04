@@ -31,5 +31,5 @@ public class Usuario implements Serializable {
     @Column(name = "permissao")
     @Enumerated(EnumType.ORDINAL)
     private com.aplication.petcenter.domain.entity.Enum.TipoPermissão tipo;
-
+    
 }
