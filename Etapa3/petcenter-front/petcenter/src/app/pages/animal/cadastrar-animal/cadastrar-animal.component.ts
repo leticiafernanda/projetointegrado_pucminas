@@ -1,11 +1,11 @@
 import {  Component, OnInit } from '@angular/core';
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
 import { AnimalBasic } from '../../../class/animalBasic.class';
-import { ModalSucessoComponent } from '../modal-sucesso/modal-sucesso.component';
 
 @Component({
   selector: 'app-cadastrar-animal',
@@ -24,7 +24,8 @@ export class CadastrarAnimalComponent implements OnInit  {
   constructor(
     private animalService: AnimalService,
     public dialog: MatDialog,
-    private router: Router) {
+    private router: Router,
+    private snackBar: MatSnackBar) {
 
   }
   ngOnInit(): void {
@@ -60,7 +61,12 @@ export class CadastrarAnimalComponent implements OnInit  {
       createAnimal =  this.buildCreateAnimal()
       this.animalService.postAnimal(createAnimal)
       .subscribe(()=>{
-       // this.dialog.open(ModalSucessoComponent);
+        this.snackBar.open('Salvo com sucesso!', '', {
+          horizontalPosition: 'start',
+          verticalPosition: 'bottom',
+          duration: 3000,
+          panelClass: ['mat-toolbar', 'mat-primary']
+        });
        this.router.navigate(["/home"]);
       })
 

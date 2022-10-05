@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Agendamento } from 'src/app/class/agendamento.class';
 import { AnimalService } from 'src/app/services/animal.service';
@@ -24,7 +25,8 @@ export class AgendarConsultaComponent implements OnInit {
     private medicoService: MedicoService,
     private clienteService: ClienteService,
     private consultaService: ConsultaService,
-    private router: Router  ) {
+    private router: Router,
+    private snackBar: MatSnackBar  ) {
 
   }
 
@@ -68,7 +70,12 @@ getMedico(){
     agendamento =  this.buildAgendamento()
     this.consultaService.postAgendamentoConsulta(agendamento)
     .subscribe(()=>{
-     // this.dialog.open(ModalSucessoComponent);
+      this.snackBar.open('Agendamento salvo com sucesso!', '', {
+        horizontalPosition: 'start',
+        verticalPosition: 'bottom',
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-primary']
+      });
      this.router.navigate(["/home"]);
     })
 

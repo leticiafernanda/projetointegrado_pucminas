@@ -1,9 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
-import { ConsultaData } from 'src/app/models/consulta.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConsultaService } from 'src/app/services/consulta.service';
 
 @Component({
@@ -21,7 +18,7 @@ export class CancelarConsultaComponent implements OnInit  {
 
   constructor(
     private consultaService: ConsultaService,
-    private router: Router
+    private snackBar: MatSnackBar
   ) {
 
   }
@@ -38,7 +35,12 @@ export class CancelarConsultaComponent implements OnInit  {
   cancelarConsulta(id:any){
     this.consultaService.putConsulta(id)
     .subscribe(()=>{
-     // this.dialog.open(ModalSucessoComponent);
+      this.snackBar.open('Consulta cancelada com sucesso!', '', {
+        horizontalPosition: 'start',
+        verticalPosition: 'bottom',
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-primary']
+      });
      window.location.reload();
     })
   }

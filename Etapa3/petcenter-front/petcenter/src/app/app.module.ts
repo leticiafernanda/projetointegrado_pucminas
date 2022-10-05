@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autenticado.guard';
+import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     HttpClientModule,
     NgHttpLoaderModule.forRoot()
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },UsuarioNaoAutenticadoGuard,UsuarioAutenticadoGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

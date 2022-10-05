@@ -12,16 +12,15 @@ import { Usuario } from '../class/usuario.class';
 })
 export class UsuarioService {
   apiURL = environment.api;
+  resp: any;
 
 constructor(private httpClient: HttpClient,
             private router: Router) {  }
 
             logar(usuario: Usuario) : Observable<any> {
-              return this.httpClient.post<any>(this.apiURL + '/v1/usuario', usuario).pipe(
+              return this.httpClient.post<any>(this.apiURL + '/v1/usuario/login', usuario).pipe(
                 tap((resposta) => {
-                  if(!resposta.sucesso) return;
-                  localStorage.setItem('usuario', btoa(JSON.stringify(resposta['usuario'])));
-                  this.router.navigate(['']);
+                  this.resp = resposta;
                 }));
             }
             deslogar() {
@@ -30,7 +29,7 @@ constructor(private httpClient: HttpClient,
           }
 
           get logado(): boolean {
-            return localStorage.getItem('token') ? true : false;
+            return this.resp == null ? false : true;
           }
 
 }

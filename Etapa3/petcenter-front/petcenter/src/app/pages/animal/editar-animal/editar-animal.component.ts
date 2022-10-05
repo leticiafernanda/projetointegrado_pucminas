@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AnimalBasic } from 'src/app/class/animalBasic.class';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
-import { Animal } from '../../../class/animal.class';
 
 @Component({
   selector: 'app-editar-animal',
@@ -23,7 +23,8 @@ export class EditarAnimalComponent implements OnInit  {
 
   constructor(
     private animalService: AnimalService,
-    private router: Router  ) {
+    private router: Router,
+    private snackBar: MatSnackBar  ) {
 
   }
   ngOnInit(): void {
@@ -85,8 +86,13 @@ export class EditarAnimalComponent implements OnInit  {
     editAnimal =  this.buildEditAnimal()
     this.animalService.putAnimal( this.idAnimal,editAnimal)
     .subscribe(()=>{
-     // this.dialog.open(ModalSucessoComponent);
-     this.router.navigate(["/home"]);
+      this.snackBar.open('Animal editado com sucesso!', '', {
+        horizontalPosition: 'start',
+        verticalPosition: 'bottom',
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-primary']
+
+      });     this.router.navigate(["/home"]);
     })
   }
   buildEditAnimal() {
