@@ -27,7 +27,6 @@ constructor(private httpClient: HttpClient,
               localStorage.clear();
               this.router.navigate(['login']);
           }
-
           get logado(): boolean {
             return this.resp == null ? false : true;
           }

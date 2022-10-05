@@ -1,5 +1,5 @@
 import { Router } from "@angular/router";
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, Input } from "@angular/core";
 
 import { Subscription, Observable } from "rxjs";
 import { MediaMatcher } from "@angular/cdk/layout";
@@ -13,6 +13,8 @@ import { UsuarioService } from "src/app/services/usuario.service";
   styleUrls: ["./navbar-menu.component.scss"]
 })
 export class NavbarMenuComponent implements OnInit, OnDestroy {
+  @Input()
+  status!: string;
 
   menu: NavItem [] = [
     {
