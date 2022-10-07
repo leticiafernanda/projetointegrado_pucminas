@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Cadastre-se</h1>
+<div mat-dialog-content>
+    <form class="form" [formGroup]="createDialogForm">
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field class="full-position" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input name="email" formControlName="email" matInput>
+                </mat-form-field>
+                <mat-form-field class="full-position--operation-situation" appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input name="senha" formControlName="senha" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="select-form">
+                <mat-form-field appearance="fill">
+                    <mat-label>Tipo de Usuário</mat-label>
+                    <mat-select formControlName="tipo">
+                        <mat-option *ngFor="let tipo of tipoUsuarioList" [value]="tipo.idTipo">
+                            {{tipo.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Cancelar</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="createdLogin()">Salvar</button>
+</mat-dialog-actions>

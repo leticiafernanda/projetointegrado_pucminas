@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/class/usuario.class';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { CadastroLoginDialog } from './cadastro-login/dialog-elements-example.component';
 
 @Component({
   selector: "login-page",
@@ -15,10 +17,11 @@ export class LoginPageComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private route: ActivatedRoute,
+    public dialog: MatDialog,
     private usuarioService: UsuarioService,
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar) { }
+
   ngOnInit(): void {
     this.criarForm()
     }
@@ -35,6 +38,9 @@ export class LoginPageComponent implements OnInit {
   handleClick(){
     this.router.navigate([`/home`])
   }
+  openDialog() {
+    this.dialog.open(CadastroLoginDialog);
+  }
   logar(){
     if(this.formLogin.invalid) return;
     var usuario = this.formLogin.getRawValue() as Usuario;
@@ -47,7 +53,6 @@ export class LoginPageComponent implements OnInit {
       }else {
         this.router.navigate(["/home"]);
       }
-
     })
   }
 }

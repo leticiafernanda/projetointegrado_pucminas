@@ -1,0 +1,46 @@
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.line {
+    background-color: transparent;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+}
+
+.form {
+    min-width: 150px;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.form-group {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 22px;
+}
+
+.select-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 3px;
+}
+
+.full-position {
+    width: 50%;
+    &--operation-situation {
+        width: 50%;
+        padding-left: 16px;
+    }
+}
+
+.buttons-actions {
+    text-align: end;
+    padding-right: 25px;
+}

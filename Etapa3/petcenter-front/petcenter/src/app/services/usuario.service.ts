@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { Login } from '../class/login';
 import { Usuario } from '../class/usuario.class';
 
 
@@ -26,6 +27,9 @@ constructor(private httpClient: HttpClient,
             deslogar() {
               localStorage.clear();
               this.router.navigate(['login']);
+          }
+          registro(login: Login) : Observable<any>{
+            return this.httpClient.post(this.apiURL +`/v1/usuario/register`,login);
           }
           get logado(): boolean {
             return this.resp == null ? false : true;
