@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/class/usuario.class';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { CadastroLoginDialog } from './cadastro-login/dialog-elements-example.component';
+import { CadastroLoginDialog } from './cadastro-login/cadastro-login-dialog.component';
 
 @Component({
   selector: "login-page",

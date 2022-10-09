@@ -3,6 +3,7 @@ package com.aplication.petcenter.domain.entity;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Data
 @Table(name = "Usuario")
 public class Usuario implements Serializable {
@@ -28,7 +30,7 @@ public class Usuario implements Serializable {
     @Column(name = "senha", unique = true)
     private String senha;
 
-    @Column(name = "permissao")
+    @Column(name = "id_permissao")
     @Enumerated(EnumType.ORDINAL)
     private com.aplication.petcenter.domain.entity.Enum.TipoPermissão tipo;
     

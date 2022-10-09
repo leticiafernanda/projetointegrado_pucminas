@@ -17,7 +17,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { AgendarConsultaComponent } from './consulta/agendar-consulta/agendar-consulta.component';
 import { CancelarConsultaComponent } from "./consulta/cancelar-consulta/cancelar-consulta.component";
 import { DeslogarComponent } from "./deslogar/deslogar.component";
-import { CadastroLoginDialog } from "./login/cadastro-login/dialog-elements-example.component";
+import { CadastroLoginDialog } from "./login/cadastro-login/cadastro-login-dialog.component";
 
 
 @NgModule({

@@ -2,13 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Login } from "src/app/class/login";
-import { Usuario } from "src/app/class/usuario.class";
 import { TipoEnum } from "src/app/enum/tipoEnum";
 import { UsuarioService } from "src/app/services/usuario.service";
 
 @Component({
-  selector: 'dialog-elements-example-dialog',
-  templateUrl: 'dialog-elements-example-dialog.html',
+  selector: 'cadastro-login-dialog',
+  templateUrl: 'cadastro-login-dialog.html',
   styleUrls: ['./cadastro-login.scss']
 
 })
@@ -42,7 +41,12 @@ export class CadastroLoginDialog implements OnInit {
     createLogin =  this.buildCreateLogin()
     this.usuarioService.registro(createLogin)
     .subscribe(()=>{
-
+      this.snackBar.open('Salvo com sucesso!', '', {
+        horizontalPosition: 'start',
+        verticalPosition: 'bottom',
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-primary']
+      });
     })
 
 }

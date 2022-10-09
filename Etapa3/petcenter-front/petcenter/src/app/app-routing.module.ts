@@ -24,7 +24,7 @@ const routes: Routes = [
 { path: 'consulta/visualizar-consulta', component: ConsultaComponent,canActivate: [UsuarioAutenticadoGuard]},
 { path: 'consulta/agendar-consulta', component: AgendarConsultaComponent,canActivate: [UsuarioAutenticadoGuard]},
 { path: 'consulta/cancelar-consulta',component: CancelarConsultaComponent,canActivate: [UsuarioAutenticadoGuard]},
-{ path: 'desloga', component:DeslogarComponent},
+{ path: '', component:DeslogarComponent},
 ];
 
 @NgModule({

@@ -11,12 +11,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsuarioDTO implements Serializable {
+public class LoginDTO implements Serializable {
  
 	private static final long serialVersionUID = 7351643912483394438L;
 	
-	private  Integer id;
     private  String email;
     private  String senha;
-    private  Integer tipo;
 }

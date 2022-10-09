@@ -1,7 +1,4 @@
-import { Router } from "@angular/router";
 import { Component, OnInit, OnDestroy, ChangeDetectorRef, Input } from "@angular/core";
-
-import { Subscription, Observable } from "rxjs";
 import { MediaMatcher } from "@angular/cdk/layout";
 import { NavItem } from "./nav-item";
 import { UsuarioService } from "src/app/services/usuario.service";
@@ -103,9 +100,67 @@ export class NavbarMenuComponent implements OnInit, OnDestroy {
         },
         {
           displayName: 'Sair do Sistema',
-          route:  "",
+          route:  '/login',
         },
   ];
+
+  menuCliente: NavItem [] = [
+
+  ];
+
+  menuFuncionario: NavItem [] = [
+    {
+      displayName: 'Inicio',
+      route: '/home',
+    },
+    {
+      displayName: 'Animal',
+      children: [
+        {
+          displayName: 'Ficha',
+          route: ''
+        },
+        {
+          displayName: 'Histórico',
+          route: ''
+        },
+      ]
+    },
+    {
+      displayName: 'Consultas',
+      children: [
+        {
+          displayName: 'Agendar',
+          route: '/consulta/agendar-consulta'
+        },
+        {
+          displayName: 'Cancelar',
+          route: '/consulta/cancelar-consulta'
+        }
+      ]
+    },
+    {
+      displayName: 'Exames',
+      children: [
+          {
+            displayName: 'Visualizar Exames Autorizados',
+            route: ''
+          },
+
+        ]
+      },
+
+        {
+          displayName: 'Sobre o PETCENTER',
+          route: '',
+        },
+        {
+          displayName: 'Sair do Sistema',
+          route:  '/login',
+        },
+  ];
+
+
 mobileQuery: MediaQueryList;
 
 
@@ -117,8 +172,17 @@ private _mobileQueryListener: () => void;
 
   }
 
-
-  ngOnInit() {}
+  ngOnInit(): any  {
+    if (this.status == "ADM"){
+      return this.menu;
+     }
+    if (this.status == "CLIENTE"){
+     return this.menuCliente;
+    }
+    if (this.status == "FUNCIONARIO" || this.status == "RH"){
+      return this.menuFuncionario;
+     }
+  }
 
   ngOnDestroy() {}
 

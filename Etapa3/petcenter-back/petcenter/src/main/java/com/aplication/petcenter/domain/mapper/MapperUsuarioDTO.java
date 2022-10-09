@@ -5,6 +5,6 @@ import com.aplication.petcenter.domain.entity.Usuario;
 
 public interface MapperUsuarioDTO {
 
-    UsuarioDTO execute(Usuario usuario);
+    Usuario execute(UsuarioDTO usuario);
 
 }

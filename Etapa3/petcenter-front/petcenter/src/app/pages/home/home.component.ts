@@ -8,11 +8,12 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  tipoUsuario : any;
   constructor(public router: Router,
     private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+     this.tipoUsuario = this.usuarioService.resp;
   }
   handleClickVisualizarConsulta(){
     this.router.navigate([`/visualizar-consulta`])
