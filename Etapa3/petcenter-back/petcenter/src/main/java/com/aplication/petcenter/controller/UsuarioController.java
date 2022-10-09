@@ -34,18 +34,8 @@ public class UsuarioController {
 	    public ResponseEntity<Void> createUsario(@RequestBody UsuarioDTO usuario) {
 	    	usuarioService.save(usuario);
 	        return new ResponseEntity<>(HttpStatus.CREATED);
-	    }
-	    
-	    //public Status registerUser(@RequestBody Usuario newUser) {
-	      //  List<Usuario> users = usuarioRepository.findAll();
-	      //  for (Usuario user : users) {
-	      //      if (user.equals(newUser)) {
-	      //          return Status.USER_ALREADY_EXISTS;
-	       //     }
-	      //  }
-	      //  usuarioRepository.save(newUser);
-	      //  return Status.SUCCESS;
-	   // }
+	    }    
+	
 	    @PostMapping("/login")
 	    public TipoPermissão loginUser(@RequestBody LoginDTO user) {
 	    	String email = user.getEmail();
