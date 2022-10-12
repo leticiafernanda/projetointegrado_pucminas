@@ -15,7 +15,7 @@ import { DeslogarComponent} from './pages/deslogar/deslogar.component';
 
 const routes: Routes = [
 { path: "login", redirectTo: "",canActivate: [UsuarioNaoAutenticadoGuard] },
-{ path: "", component: LoginPageComponent,canActivate: [UsuarioNaoAutenticadoGuard] },
+{ path: "", component: LoginPageComponent},
 { path: "home", component: HomeComponent, data: { title: "Home" },canActivate: [UsuarioAutenticadoGuard] },
 { path: "animal", component: AnimalComponent,canActivate: [UsuarioAutenticadoGuard]},
 { path: 'animal/cadastrar-animal', component: CadastrarAnimalComponent,canActivate: [UsuarioAutenticadoGuard]},
