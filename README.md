@@ -45,13 +45,13 @@ Diretório com informações e documentos adicionais da matéria de Projeto Inte
  
      - [x] Desenvolvimento de funcionalidades
  
-     - [ ] Plano e Relatório de testes de software
+     - [x] Plano e Relatório de testes de software
  
-     - [ ] Avaliação retrospectiva
+     - [x] Avaliação retrospectiva
       
-     - [ ] Video
+     - [x] Video
 
-     - [ ] Histórico da apropriação de horas
+     - [x] Histórico da apropriação de horas
 
 
  
