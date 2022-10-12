@@ -59,7 +59,7 @@
 
                 <mat-form-field class="full-position--operation-situation" appearance="fill">
                     <mat-label>Proprietário</mat-label>
-                    <mat-select formControlName="clienteId">
+                    <mat-select formControlName="idCliente">
                         <mat-option *ngFor="let proprietario of proprietarioAnimalList" [value]="proprietario.id">
                             {{proprietario.nome}}
                         </mat-option>

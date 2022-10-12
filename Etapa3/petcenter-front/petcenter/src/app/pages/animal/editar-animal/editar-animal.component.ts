@@ -66,7 +66,7 @@ export class EditarAnimalComponent implements OnInit  {
         raca: response.raca,
         especie: response.especie,
         pelagem: response.pelagem,
-        clienteId: response.proprietario.id,
+        idCliente: response.proprietario.id,
         proprietario: response.proprietario.nome,
         peso: response.peso,
         idade: response.idade,
@@ -98,14 +98,14 @@ export class EditarAnimalComponent implements OnInit  {
   buildEditAnimal() {
     let editAnimal = new AnimalBasic();
     editAnimal.id = Math.floor(Math.random() * 100) + 1;
-    editAnimal.nome= this.editForm.value.nome;
-    editAnimal.raca= this.editForm.value.raca;
-    editAnimal.especie= this.editForm.value.especie;
-    editAnimal.pelagem= this.editForm.value.pelagem;
-    editAnimal.idCliente =  this.editForm.value.idCliente;
-    editAnimal.peso= this.editForm.value.peso;
-    editAnimal.idade= this.editForm.value.idade;
-    editAnimal.genero= this.editForm.value.genero;
+    editAnimal.nome= this.editForm.controls['nome'].value;
+    editAnimal.raca= this.editForm.controls['raca'].value;
+    editAnimal.especie= this.editForm.controls['especie'].value;
+    editAnimal.pelagem= this.editForm.controls['pelagem'].value;
+    editAnimal.idCliente =  this.editForm.controls['idCliente'].value;
+    editAnimal.peso= this.editForm.controls['peso'].value;
+    editAnimal.idade= this.editForm.controls['idade'].value;
+    editAnimal.genero= this.editForm.controls['genero'].value;
     return editAnimal;
   }
 

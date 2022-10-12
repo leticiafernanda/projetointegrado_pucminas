@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { GeneroEnum } from 'src/app/enum/generoEnum';
 import { AnimalService } from 'src/app/services/animal.service';
 
@@ -19,7 +21,9 @@ export class ExcluirAnimalComponent implements OnInit  {
   idAnimal!: string;
 
     constructor(
-      private animalService: AnimalService  ) {
+      private animalService: AnimalService,
+      private router: Router,
+      private snackBar: MatSnackBar   ) {
 
     }
     ngOnInit(): void {
@@ -76,6 +80,14 @@ export class ExcluirAnimalComponent implements OnInit  {
      }
 
     delete(){
-      this.animalService.deleteAnimal(this.idAnimal).subscribe()
+      this.animalService.deleteAnimal(this.idAnimal).subscribe(()=>{
+        this.snackBar.open('Animal excluido com sucesso!', '', {
+          horizontalPosition: 'start',
+          verticalPosition: 'bottom',
+          duration: 3000,
+          panelClass: ['mat-toolbar', 'mat-primary']
+
+        });     this.router.navigate(["/home"]);
+      })
     }
   }
